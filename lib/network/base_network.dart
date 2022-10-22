@@ -25,10 +25,16 @@ class BaseNetwork {
 
   Future<T> get<T>({Map<String, dynamic>? queryParameters}) async {
     final TokenNetwork network = await _network();
-    response =
-        await network.http.get(requestUrl(), queryParameters: queryParameters);
+    response = await network.http.get(
+      requestUrl(),
+      queryParameters: queryParameters,
+      options: Options(
+        responseType: ResponseType.plain,
+      ),
+    );
     final json = jsonDecode(response.toString());
     log('REQUEST GET SUCCESS');
+    // log('====> $response');
     return responseType(json) as T;
   }
 

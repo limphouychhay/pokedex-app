@@ -54,16 +54,10 @@ class AppRouter extends _i4.RootStackRouter {
         child: const _i1.HomeScreen(),
       );
     },
-    ProjectRouter.name: (routeData) {
+    FavoriteRoute.name: (routeData) {
       return _i4.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i1.ProjectScreen(),
-      );
-    },
-    NotificationRouter.name: (routeData) {
-      return _i4.MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const _i1.NotificationScreen(),
+        child: const _i1.FavoriteScreen(),
       );
     },
   };
@@ -72,7 +66,7 @@ class AppRouter extends _i4.RootStackRouter {
   List<_i4.RouteConfig> get routes => [
         _i4.RouteConfig(
           StartUpScreen.name,
-          path: '/start-up-screen',
+          path: '/',
         ),
         _i4.RouteConfig(
           AuthRouter.name,
@@ -87,21 +81,16 @@ class AppRouter extends _i4.RootStackRouter {
         ),
         _i4.RouteConfig(
           DashboardRouter.name,
-          path: '/',
+          path: '/dashboard-tab',
           children: [
             _i4.RouteConfig(
               HomeRouter.name,
-              path: 'home-screen',
+              path: '',
               parent: DashboardRouter.name,
             ),
             _i4.RouteConfig(
-              ProjectRouter.name,
-              path: 'project-screen',
-              parent: DashboardRouter.name,
-            ),
-            _i4.RouteConfig(
-              NotificationRouter.name,
-              path: 'notification-screen',
+              FavoriteRoute.name,
+              path: 'favorite-screen',
               parent: DashboardRouter.name,
             ),
           ],
@@ -115,7 +104,7 @@ class StartUpScreen extends _i4.PageRouteInfo<void> {
   const StartUpScreen()
       : super(
           StartUpScreen.name,
-          path: '/start-up-screen',
+          path: '/',
         );
 
   static const String name = 'StartUpScreen';
@@ -140,7 +129,7 @@ class DashboardRouter extends _i4.PageRouteInfo<void> {
   const DashboardRouter({List<_i4.PageRouteInfo>? children})
       : super(
           DashboardRouter.name,
-          path: '/',
+          path: '/dashboard-tab',
           initialChildren: children,
         );
 
@@ -165,32 +154,20 @@ class HomeRouter extends _i4.PageRouteInfo<void> {
   const HomeRouter()
       : super(
           HomeRouter.name,
-          path: 'home-screen',
+          path: '',
         );
 
   static const String name = 'HomeRouter';
 }
 
 /// generated route for
-/// [_i1.ProjectScreen]
-class ProjectRouter extends _i4.PageRouteInfo<void> {
-  const ProjectRouter()
+/// [_i1.FavoriteScreen]
+class FavoriteRoute extends _i4.PageRouteInfo<void> {
+  const FavoriteRoute()
       : super(
-          ProjectRouter.name,
-          path: 'project-screen',
+          FavoriteRoute.name,
+          path: 'favorite-screen',
         );
 
-  static const String name = 'ProjectRouter';
-}
-
-/// generated route for
-/// [_i1.NotificationScreen]
-class NotificationRouter extends _i4.PageRouteInfo<void> {
-  const NotificationRouter()
-      : super(
-          NotificationRouter.name,
-          path: 'notification-screen',
-        );
-
-  static const String name = 'NotificationRouter';
+  static const String name = 'FavoriteRoute';
 }

@@ -7,12 +7,12 @@ import 'package:pokedex_app/screens/screens.dart';
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
     AutoRoute(
-      // initial: true,
+      initial: true,
       page: StartUpScreen,
     ),
     AutoRoute(
       page: EmptyRouterPage,
-      name: 'AuthRouter', // to use this when wanna to replace route
+      name: 'AuthRouter',
       children: [
         AutoRoute(name: 'LoginRouter', page: LoginScreen, initial: true),
       ],
@@ -20,11 +20,9 @@ import 'package:pokedex_app/screens/screens.dart';
     AutoRoute(
       page: DashboardTab,
       name: 'DashboardRouter',
-      initial: true,
       children: [
-        AutoRoute(name: 'HomeRouter', page: HomeScreen),
-        AutoRoute(name: 'ProjectRouter', page: ProjectScreen),
-        AutoRoute(name: 'NotificationRouter', page: NotificationScreen),
+        AutoRoute(name: 'HomeRouter', page: HomeScreen, initial: true),
+        AutoRoute(name: 'FavoriteRoute', page: FavoriteScreen),
       ],
     ),
   ],
