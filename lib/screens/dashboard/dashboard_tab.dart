@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:pokedex_app/themes/app_theme.dart';
 import 'package:pokedex_app/widgets/widgets.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -11,6 +12,12 @@ class DashboardTab extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    useEffect(() {
+      FlutterNativeSplash.remove();
+
+      return () {};
+    }, []);
+
     return AutoTabsRouter(
       routes: const [
         HomeRouter(),
