@@ -42,6 +42,12 @@ class AppRouter extends _i4.RootStackRouter {
         child: const _i3.DashboardTab(),
       );
     },
+    HomeRoute.name: (routeData) {
+      return _i4.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i2.EmptyRouterPage(),
+      );
+    },
     LoginRouter.name: (routeData) {
       return _i4.MaterialPageX<dynamic>(
         routeData: routeData,
@@ -54,10 +60,32 @@ class AppRouter extends _i4.RootStackRouter {
         child: const _i1.HomeScreen(),
       );
     },
-    FavoriteRoute.name: (routeData) {
+    FavoriteRouter.name: (routeData) {
       return _i4.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i1.FavoriteScreen(),
+      );
+    },
+    DetailRouter.name: (routeData) {
+      final args = routeData.argsAs<DetailRouterArgs>();
+      return _i4.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: _i1.DetailScreen(
+          key: args.key,
+          xdescription: args.xdescription,
+          ydescription: args.ydescription,
+          height: args.height,
+          weight: args.weight,
+          category: args.category,
+          typeOfPokemon: args.typeOfPokemon,
+          speed: args.speed,
+          hp: args.hp,
+          attack: args.attack,
+          defense: args.defense,
+          imageUrl: args.imageUrl,
+          name: args.name,
+          id: args.id,
+        ),
       );
     },
   };
@@ -89,10 +117,21 @@ class AppRouter extends _i4.RootStackRouter {
               parent: DashboardRouter.name,
             ),
             _i4.RouteConfig(
-              FavoriteRoute.name,
+              FavoriteRouter.name,
               path: 'favorite-screen',
               parent: DashboardRouter.name,
             ),
+          ],
+        ),
+        _i4.RouteConfig(
+          HomeRoute.name,
+          path: '/empty-router-page',
+          children: [
+            _i4.RouteConfig(
+              DetailRouter.name,
+              path: 'detail-screen',
+              parent: HomeRoute.name,
+            )
           ],
         ),
       ];
@@ -137,6 +176,19 @@ class DashboardRouter extends _i4.PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [_i2.EmptyRouterPage]
+class HomeRoute extends _i4.PageRouteInfo<void> {
+  const HomeRoute({List<_i4.PageRouteInfo>? children})
+      : super(
+          HomeRoute.name,
+          path: '/empty-router-page',
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeRoute';
+}
+
+/// generated route for
 /// [_i1.LoginScreen]
 class LoginRouter extends _i4.PageRouteInfo<void> {
   const LoginRouter()
@@ -162,12 +214,106 @@ class HomeRouter extends _i4.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i1.FavoriteScreen]
-class FavoriteRoute extends _i4.PageRouteInfo<void> {
-  const FavoriteRoute()
+class FavoriteRouter extends _i4.PageRouteInfo<void> {
+  const FavoriteRouter()
       : super(
-          FavoriteRoute.name,
+          FavoriteRouter.name,
           path: 'favorite-screen',
         );
 
-  static const String name = 'FavoriteRoute';
+  static const String name = 'FavoriteRouter';
+}
+
+/// generated route for
+/// [_i1.DetailScreen]
+class DetailRouter extends _i4.PageRouteInfo<DetailRouterArgs> {
+  DetailRouter({
+    _i5.Key? key,
+    required String xdescription,
+    required String ydescription,
+    required String height,
+    required String weight,
+    required String category,
+    required List<String> typeOfPokemon,
+    required String speed,
+    required String hp,
+    required String attack,
+    required String defense,
+    required String imageUrl,
+    required String name,
+    required String id,
+  }) : super(
+          DetailRouter.name,
+          path: 'detail-screen',
+          args: DetailRouterArgs(
+            key: key,
+            xdescription: xdescription,
+            ydescription: ydescription,
+            height: height,
+            weight: weight,
+            category: category,
+            typeOfPokemon: typeOfPokemon,
+            speed: speed,
+            hp: hp,
+            attack: attack,
+            defense: defense,
+            imageUrl: imageUrl,
+            name: name,
+            id: id,
+          ),
+        );
+
+  static const String name = 'DetailRouter';
+}
+
+class DetailRouterArgs {
+  const DetailRouterArgs({
+    this.key,
+    required this.xdescription,
+    required this.ydescription,
+    required this.height,
+    required this.weight,
+    required this.category,
+    required this.typeOfPokemon,
+    required this.speed,
+    required this.hp,
+    required this.attack,
+    required this.defense,
+    required this.imageUrl,
+    required this.name,
+    required this.id,
+  });
+
+  final _i5.Key? key;
+
+  final String xdescription;
+
+  final String ydescription;
+
+  final String height;
+
+  final String weight;
+
+  final String category;
+
+  final List<String> typeOfPokemon;
+
+  final String speed;
+
+  final String hp;
+
+  final String attack;
+
+  final String defense;
+
+  final String imageUrl;
+
+  final String name;
+
+  final String id;
+
+  @override
+  String toString() {
+    return 'DetailRouterArgs{key: $key, xdescription: $xdescription, ydescription: $ydescription, height: $height, weight: $weight, category: $category, typeOfPokemon: $typeOfPokemon, speed: $speed, hp: $hp, attack: $attack, defense: $defense, imageUrl: $imageUrl, name: $name, id: $id}';
+  }
 }
