@@ -15,6 +15,7 @@ import 'package:auto_route/auto_route.dart' as _i4;
 import 'package:auto_route/empty_router_widgets.dart' as _i2;
 import 'package:flutter/material.dart' as _i5;
 
+import '../models/models.dart' as _i6;
 import '../screens/dashboard/dashboard_tab.dart' as _i3;
 import '../screens/screens.dart' as _i1;
 
@@ -72,19 +73,7 @@ class AppRouter extends _i4.RootStackRouter {
         routeData: routeData,
         child: _i1.DetailScreen(
           key: args.key,
-          xdescription: args.xdescription,
-          ydescription: args.ydescription,
-          height: args.height,
-          weight: args.weight,
-          category: args.category,
-          typeOfPokemon: args.typeOfPokemon,
-          speed: args.speed,
-          hp: args.hp,
-          attack: args.attack,
-          defense: args.defense,
-          imageUrl: args.imageUrl,
-          name: args.name,
-          id: args.id,
+          pokemon: args.pokemon,
         ),
       );
     },
@@ -229,37 +218,13 @@ class FavoriteRouter extends _i4.PageRouteInfo<void> {
 class DetailRouter extends _i4.PageRouteInfo<DetailRouterArgs> {
   DetailRouter({
     _i5.Key? key,
-    required String xdescription,
-    required String ydescription,
-    required String height,
-    required String weight,
-    required String category,
-    required List<String> typeOfPokemon,
-    required String speed,
-    required String hp,
-    required String attack,
-    required String defense,
-    required String imageUrl,
-    required String name,
-    required String id,
+    required _i6.PokemonModel pokemon,
   }) : super(
           DetailRouter.name,
           path: 'detail-screen',
           args: DetailRouterArgs(
             key: key,
-            xdescription: xdescription,
-            ydescription: ydescription,
-            height: height,
-            weight: weight,
-            category: category,
-            typeOfPokemon: typeOfPokemon,
-            speed: speed,
-            hp: hp,
-            attack: attack,
-            defense: defense,
-            imageUrl: imageUrl,
-            name: name,
-            id: id,
+            pokemon: pokemon,
           ),
         );
 
@@ -269,51 +234,15 @@ class DetailRouter extends _i4.PageRouteInfo<DetailRouterArgs> {
 class DetailRouterArgs {
   const DetailRouterArgs({
     this.key,
-    required this.xdescription,
-    required this.ydescription,
-    required this.height,
-    required this.weight,
-    required this.category,
-    required this.typeOfPokemon,
-    required this.speed,
-    required this.hp,
-    required this.attack,
-    required this.defense,
-    required this.imageUrl,
-    required this.name,
-    required this.id,
+    required this.pokemon,
   });
 
   final _i5.Key? key;
 
-  final String xdescription;
-
-  final String ydescription;
-
-  final String height;
-
-  final String weight;
-
-  final String category;
-
-  final List<String> typeOfPokemon;
-
-  final String speed;
-
-  final String hp;
-
-  final String attack;
-
-  final String defense;
-
-  final String imageUrl;
-
-  final String name;
-
-  final String id;
+  final _i6.PokemonModel pokemon;
 
   @override
   String toString() {
-    return 'DetailRouterArgs{key: $key, xdescription: $xdescription, ydescription: $ydescription, height: $height, weight: $weight, category: $category, typeOfPokemon: $typeOfPokemon, speed: $speed, hp: $hp, attack: $attack, defense: $defense, imageUrl: $imageUrl, name: $name, id: $id}';
+    return 'DetailRouterArgs{key: $key, pokemon: $pokemon}';
   }
 }
