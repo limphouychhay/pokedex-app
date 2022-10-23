@@ -46,6 +46,18 @@ class HomeScreen extends StatelessWidget {
               },
             ),
           );
+        } else if (state is PokemonFetchFailed) {
+          return Container(
+            height: double.infinity,
+            color: Colors.white54,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset('assets/images/error.png'),
+                const Text('Something went wrong, please try again later.'),
+              ],
+            ),
+          );
         }
         return const SizedBox();
       },
