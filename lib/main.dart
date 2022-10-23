@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:pokedex_app/app_router/app_router.gr.dart';
 import 'package:pokedex_app/bloc/authentication/authentication_bloc.dart';
 import 'package:pokedex_app/themes/app_theme.dart';
@@ -13,7 +14,9 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   GetIt.instance.registerSingleton<AppRouter>(AppRouter());
 

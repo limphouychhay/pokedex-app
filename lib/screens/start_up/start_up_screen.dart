@@ -1,3 +1,4 @@
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:pokedex_app/app_router/app_router.gr.dart';
 import 'package:pokedex_app/utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -13,10 +14,14 @@ class StartUpScreen extends HookWidget {
     //   final authState = context.read<AuthenticationBloc>().state;
 
     //   if (authState is Authenticated) {
-    //     context.read<AuthenticationBloc>().add(const AuthenticationEvent.autoLogin());
+    //     context
+    //         .read<AuthenticationBloc>()
+    //         .add(const AuthenticationEvent.autoLogin());
     //   } else {
     //     context.replaceRoute(const AuthRouter());
     //   }
+
+    //   FlutterNativeSplash.remove();
 
     //   return () {};
     // }, const []);
