@@ -15,6 +15,12 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        jcenter() {
+            content {
+                includeModule("com.kaopiz", "kprogresshud")
+            }
+        }
+        jcenter()
     }
 }
 

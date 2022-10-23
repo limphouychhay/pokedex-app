@@ -1,6 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pokedex_app/app_router/app_router.gr.dart';
 import 'package:pokedex_app/bloc/pokemon/pokemon_bloc.dart';
+
+import 'widgets/widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,20 +15,36 @@ class HomeScreen extends StatelessWidget {
       builder: (context, state) {
         if (state is PokemonFetchSucceed) {
           final pokemonList = state.pokemonResponseModel.pokemonModel;
-          return ListView.builder(
-            itemCount: pokemonList.length,
-            itemBuilder: (context, index) {
-              return Column(
-                children: [
-                  Text(pokemonList[index].name),
-                  Image.network(
-                    '${pokemonList[index].imageUrl}',
-                    height: 100,
-                    width: 100,
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: GridView.builder(
+              shrinkWrap: true,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 4.0,
+                mainAxisSpacing: 4.0,
+              ),
+              itemCount: pokemonList.length,
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () {
+                    context.navigateTo(
+                      HomeRoute(
+                        children: [
+                          DetailRouter(
+                            pokemon: pokemonList[index],
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                  child: PokemonCardWidget(
+                    index: index,
+                    pokemonList: pokemonList,
                   ),
-                ],
-              );
-            },
+                );
+              },
+            ),
           );
         }
         return const SizedBox();

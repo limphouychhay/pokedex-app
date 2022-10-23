@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final router = GetIt.instance<AppRouter>();
     return MaterialApp.router(
-      title: 'Bloc Boilerplate',
+      title: 'Pokedex App',
       theme: AppTheme.define(),
       routeInformationParser: router.defaultRouteParser(),
       routerDelegate: AutoRouterDelegate(router),

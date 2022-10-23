@@ -14,57 +14,81 @@ class DashboardTab extends HookWidget {
     return AutoTabsRouter(
       routes: const [
         HomeRouter(),
+        FavoriteRouter(),
       ],
       builder: (context, child, animation) {
         final tabsRouter = AutoTabsRouter.of(context);
 
-        // AppBar _dynamicAppBar() {
-        //   if (tabsRouter.activeIndex == 0) {
-        //     return AppBar(
-        //       title: Text(tr('screen.home')),
-        //     );
-        //   } else {
-        //     return AppBar(
-        //       title: const Text('Favorite'),
-        //     );
-        //   }
-        // }
+        AppBar _dynamicAppBar() {
+          if (tabsRouter.activeIndex == 0) {
+            return AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              toolbarHeight: 1,
+            );
+          } else {
+            return AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              toolbarHeight: 1,
+            );
+          }
+        }
 
         return Scaffold(
-          // appBar: _dynamicAppBar(),
+          extendBody: true,
+          appBar: _dynamicAppBar(),
           body: FadeTransition(
             opacity: animation,
             child: child,
           ),
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: tabsRouter.activeIndex,
-            onTap: (index) {
-              tabsRouter.setActiveIndex(index);
-            },
-            items: const [
-              BottomNavigationBarItem(
-                label: 'Home',
-                icon: SvgIconWidget(
-                  'assets/svgs/home.svg',
-                  color: AppColors.iconInActive,
-                ),
-                activeIcon: SvgIconWidget(
-                  'assets/svgs/home.svg',
-                  color: AppColors.primary,
-                ),
+          bottomNavigationBar: Container(
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(30),
+                topLeft: Radius.circular(30),
               ),
-              BottomNavigationBarItem(
-                label: 'Favorite',
-                icon: SvgIconWidget(
-                  'assets/svgs/favorite.svg',
-                  color: AppColors.iconInActive,
-                ),
-                activeIcon: SvgIconWidget(
-                  'assets/svgs/favorite.svg',
-                  color: AppColors.primary,
-                ),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black38, spreadRadius: 0, blurRadius: 10),
+              ],
+            ),
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(30.0),
+                topRight: Radius.circular(30.0),
               ),
-            ],
+              child: BottomNavigationBar(
+                currentIndex: tabsRouter.activeIndex,
+                onTap: (index) {
+                  tabsRouter.setActiveIndex(index);
+                },
+                items: const [
+                  BottomNavigationBarItem(
+                    label: 'Home',
+                    icon: SvgIconWidget(
+                      'assets/svgs/home.svg',
+                      color: AppColors.iconInActive,
+                    ),
+                    activeIcon: SvgIconWidget(
+                      'assets/svgs/home.svg',
+                      color: AppColors.primary,
+                    ),
+                  ),
+                  BottomNavigationBarItem(
+                    label: 'Favorite',
+                    icon: SvgIconWidget(
+                      'assets/svgs/favorite.svg',
+                      color: AppColors.iconInActive,
+                    ),
+                    activeIcon: SvgIconWidget(
+                      'assets/svgs/favorite.svg',
+                      color: AppColors.primary,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         );
       },

@@ -22,7 +22,14 @@ import 'package:pokedex_app/screens/screens.dart';
       name: 'DashboardRouter',
       children: [
         AutoRoute(name: 'HomeRouter', page: HomeScreen, initial: true),
-        AutoRoute(name: 'FavoriteRoute', page: FavoriteScreen),
+        AutoRoute(name: 'FavoriteRouter', page: FavoriteScreen),
+      ],
+    ),
+    AutoRoute(
+      page: EmptyRouterPage,
+      name: 'HomeRoute',
+      children: [
+        AutoRoute(name: 'DetailRouter', page: DetailScreen),
       ],
     ),
   ],

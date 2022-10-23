@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:pokedex_app/themes/material_color_generator.dart';
 import 'package:flutter/material.dart';
 
@@ -29,6 +30,11 @@ class AppTheme {
       ),
       scaffoldBackgroundColor: AppColors.scaffoldBackground,
       appBarTheme: const AppBarTheme(
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+          statusBarIconBrightness: Brightness.dark,
+          statusBarBrightness: Brightness.light,
+        ),
         backgroundColor: AppColors.white,
         titleTextStyle: TextStyle(
           color: Colors.black,
@@ -37,6 +43,7 @@ class AppTheme {
         ),
         iconTheme: IconThemeData(color: Colors.black),
         centerTitle: false,
+        foregroundColor: Colors.black,
       ),
       textTheme: const TextTheme(
         headline1: TextStyle(
