@@ -1,10 +1,14 @@
 import 'dart:developer';
 import 'dart:io';
+
+import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 import 'package:pokedex_app/constants/constants.dart';
 import 'package:pokedex_app/storages/storages.dart';
 import 'package:pokedex_app/utils/utils.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+
+import 'error.dart';
 
 class UserTokenInterceptor extends Interceptor {
   AppStorage appStorage;
@@ -44,6 +48,43 @@ class UserTokenInterceptor extends Interceptor {
       options.headers['x-client-key'] = clientKey;
     }
     return options;
+  }
+
+  @override
+  void onError(DioError err, ErrorInterceptorHandler handler) {
+    if (err.type == DioErrorType.response) {
+      switch (err.response?.statusCode) {
+        case 401:
+          err.error = const Unauthorized().message;
+          break;
+        case 403:
+          err.error = const Forbidden().message;
+          break;
+        case 404:
+          err.error = const NotFound().message;
+          break;
+        case 500:
+          err.error = const InternalServerError().message;
+          break;
+      }
+    }
+
+    if (err.type == DioErrorType.cancel) err.error = const UserCancelled();
+
+    if (err.type == DioErrorType.sendTimeout ||
+        err.type == DioErrorType.receiveTimeout) {
+      err.error = const ServerTimeOut().message;
+    }
+
+    if (err.type == DioErrorType.connectTimeout) {
+      err.error = const NoConnection().message;
+    }
+
+    if (err.type == DioErrorType.other) {
+      err.error = const Other().message;
+    }
+
+    super.onError(err, handler);
   }
 
   String? getToken() => appStorage.readString(key: StorageKey.token.toString());

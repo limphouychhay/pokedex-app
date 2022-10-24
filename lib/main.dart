@@ -1,8 +1,9 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:pokedex_app/app_router/app_router.gr.dart';
-import 'package:pokedex_app/bloc/authentication/authentication_bloc.dart';
+import 'package:pokedex_app/bloc/pokemon/pokemon_bloc.dart';
 import 'package:pokedex_app/themes/app_theme.dart';
 import 'package:pokedex_app/utils/utils.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -12,8 +13,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 
+// final PublishSubject<String> globalSnackBarSubject = PublishSubject<String>();
+// Future<void> _handleBackground(RemoteMessage message) async {
+//   log('onBackground');
+// }
+
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   GetIt.instance.registerSingleton<AppRouter>(AppRouter());
 
@@ -25,8 +33,9 @@ void main() async {
     () => runApp(
       MultiBlocProvider(
         providers: [
-          BlocProvider<AuthenticationBloc>(
-              create: (context) => AuthenticationBloc()),
+          BlocProvider<PokemonBloc>(
+            create: (context) => PokemonBloc(),
+          ),
         ],
         child: EasyLocalization(
           supportedLocales: const [
@@ -58,7 +67,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final router = GetIt.instance<AppRouter>();
     return MaterialApp.router(
-      title: 'Bloc Boilerplate',
+      title: 'Pokedex App',
       theme: AppTheme.define(),
       routeInformationParser: router.defaultRouteParser(),
       routerDelegate: AutoRouterDelegate(router),

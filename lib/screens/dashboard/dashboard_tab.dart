@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:pokedex_app/themes/app_theme.dart';
-import 'package:pokedex_app/widgets/widgets.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+
 import 'package:pokedex_app/app_router/app_router.gr.dart';
+import 'package:pokedex_app/themes/app_theme.dart';
+import 'package:pokedex_app/widgets/widgets.dart';
 
 class DashboardTab extends HookWidget {
   const DashboardTab({Key? key}) : super(key: key);
@@ -14,8 +14,7 @@ class DashboardTab extends HookWidget {
     return AutoTabsRouter(
       routes: const [
         HomeRouter(),
-        ProjectRouter(),
-        NotificationRouter(),
+        FavoriteRouter(),
       ],
       builder: (context, child, animation) {
         final tabsRouter = AutoTabsRouter.of(context);
@@ -23,65 +22,73 @@ class DashboardTab extends HookWidget {
         AppBar _dynamicAppBar() {
           if (tabsRouter.activeIndex == 0) {
             return AppBar(
-              title: Text(tr('screen.home')),
-            );
-          } else if (tabsRouter.activeIndex == 1) {
-            return AppBar(
-              title: const Text('Project'),
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              toolbarHeight: 1,
             );
           } else {
             return AppBar(
-              title: const Text('Notification'),
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              toolbarHeight: 1,
             );
           }
         }
 
         return Scaffold(
+          extendBody: true,
           appBar: _dynamicAppBar(),
           body: FadeTransition(
             opacity: animation,
             child: child,
           ),
-          bottomNavigationBar: BottomNavigationBar(
-            currentIndex: tabsRouter.activeIndex,
-            onTap: (index) {
-              tabsRouter.setActiveIndex(index);
-            },
-            items: const [
-              BottomNavigationBarItem(
-                label: 'Home',
-                icon: SvgIconWidget(
-                  'assets/svgs/home.svg',
-                  color: AppColors.iconInActive,
-                ),
-                activeIcon: SvgIconWidget(
-                  'assets/svgs/home.svg',
-                  color: AppColors.primary,
-                ),
+          bottomNavigationBar: Container(
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(30),
+                topLeft: Radius.circular(30),
               ),
-              BottomNavigationBarItem(
-                label: 'Projects',
-                icon: SvgIconWidget(
-                  'assets/svgs/project.svg',
-                  color: AppColors.iconInActive,
-                ),
-                activeIcon: SvgIconWidget(
-                  'assets/svgs/project.svg',
-                  color: AppColors.primary,
-                ),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black38, spreadRadius: 0, blurRadius: 10),
+              ],
+            ),
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(30.0),
+                topRight: Radius.circular(30.0),
               ),
-              BottomNavigationBarItem(
-                label: 'Notifications',
-                icon: SvgIconWidget(
-                  'assets/svgs/notification.svg',
-                  color: AppColors.iconInActive,
-                ),
-                activeIcon: SvgIconWidget(
-                  'assets/svgs/notification.svg',
-                  color: AppColors.primary,
-                ),
+              child: BottomNavigationBar(
+                currentIndex: tabsRouter.activeIndex,
+                onTap: (index) {
+                  tabsRouter.setActiveIndex(index);
+                },
+                items: const [
+                  BottomNavigationBarItem(
+                    label: 'Home',
+                    icon: SvgIconWidget(
+                      'assets/svgs/home.svg',
+                      color: AppColors.iconInActive,
+                    ),
+                    activeIcon: SvgIconWidget(
+                      'assets/svgs/home.svg',
+                      color: AppColors.primary,
+                    ),
+                  ),
+                  BottomNavigationBarItem(
+                    label: 'Favorite',
+                    icon: SvgIconWidget(
+                      'assets/svgs/favorite.svg',
+                      color: AppColors.iconInActive,
+                    ),
+                    activeIcon: SvgIconWidget(
+                      'assets/svgs/favorite.svg',
+                      color: AppColors.primary,
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         );
       },

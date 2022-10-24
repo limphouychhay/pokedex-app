@@ -15,6 +15,7 @@ import 'package:auto_route/auto_route.dart' as _i4;
 import 'package:auto_route/empty_router_widgets.dart' as _i2;
 import 'package:flutter/material.dart' as _i5;
 
+import '../models/models.dart' as _i6;
 import '../screens/dashboard/dashboard_tab.dart' as _i3;
 import '../screens/screens.dart' as _i1;
 
@@ -42,6 +43,12 @@ class AppRouter extends _i4.RootStackRouter {
         child: const _i3.DashboardTab(),
       );
     },
+    HomeRoute.name: (routeData) {
+      return _i4.MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: const _i2.EmptyRouterPage(),
+      );
+    },
     LoginRouter.name: (routeData) {
       return _i4.MaterialPageX<dynamic>(
         routeData: routeData,
@@ -54,16 +61,20 @@ class AppRouter extends _i4.RootStackRouter {
         child: const _i1.HomeScreen(),
       );
     },
-    ProjectRouter.name: (routeData) {
+    FavoriteRouter.name: (routeData) {
       return _i4.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i1.ProjectScreen(),
+        child: const _i1.FavoriteScreen(),
       );
     },
-    NotificationRouter.name: (routeData) {
+    DetailRouter.name: (routeData) {
+      final args = routeData.argsAs<DetailRouterArgs>();
       return _i4.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i1.NotificationScreen(),
+        child: _i1.DetailScreen(
+          key: args.key,
+          pokemon: args.pokemon,
+        ),
       );
     },
   };
@@ -72,7 +83,7 @@ class AppRouter extends _i4.RootStackRouter {
   List<_i4.RouteConfig> get routes => [
         _i4.RouteConfig(
           StartUpScreen.name,
-          path: '/start-up-screen',
+          path: '/',
         ),
         _i4.RouteConfig(
           AuthRouter.name,
@@ -87,23 +98,29 @@ class AppRouter extends _i4.RootStackRouter {
         ),
         _i4.RouteConfig(
           DashboardRouter.name,
-          path: '/',
+          path: '/dashboard-tab',
           children: [
             _i4.RouteConfig(
               HomeRouter.name,
-              path: 'home-screen',
+              path: '',
               parent: DashboardRouter.name,
             ),
             _i4.RouteConfig(
-              ProjectRouter.name,
-              path: 'project-screen',
+              FavoriteRouter.name,
+              path: 'favorite-screen',
               parent: DashboardRouter.name,
             ),
+          ],
+        ),
+        _i4.RouteConfig(
+          HomeRoute.name,
+          path: '/empty-router-page',
+          children: [
             _i4.RouteConfig(
-              NotificationRouter.name,
-              path: 'notification-screen',
-              parent: DashboardRouter.name,
-            ),
+              DetailRouter.name,
+              path: 'detail-screen',
+              parent: HomeRoute.name,
+            )
           ],
         ),
       ];
@@ -115,7 +132,7 @@ class StartUpScreen extends _i4.PageRouteInfo<void> {
   const StartUpScreen()
       : super(
           StartUpScreen.name,
-          path: '/start-up-screen',
+          path: '/',
         );
 
   static const String name = 'StartUpScreen';
@@ -140,11 +157,24 @@ class DashboardRouter extends _i4.PageRouteInfo<void> {
   const DashboardRouter({List<_i4.PageRouteInfo>? children})
       : super(
           DashboardRouter.name,
-          path: '/',
+          path: '/dashboard-tab',
           initialChildren: children,
         );
 
   static const String name = 'DashboardRouter';
+}
+
+/// generated route for
+/// [_i2.EmptyRouterPage]
+class HomeRoute extends _i4.PageRouteInfo<void> {
+  const HomeRoute({List<_i4.PageRouteInfo>? children})
+      : super(
+          HomeRoute.name,
+          path: '/empty-router-page',
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeRoute';
 }
 
 /// generated route for
@@ -165,32 +195,54 @@ class HomeRouter extends _i4.PageRouteInfo<void> {
   const HomeRouter()
       : super(
           HomeRouter.name,
-          path: 'home-screen',
+          path: '',
         );
 
   static const String name = 'HomeRouter';
 }
 
 /// generated route for
-/// [_i1.ProjectScreen]
-class ProjectRouter extends _i4.PageRouteInfo<void> {
-  const ProjectRouter()
+/// [_i1.FavoriteScreen]
+class FavoriteRouter extends _i4.PageRouteInfo<void> {
+  const FavoriteRouter()
       : super(
-          ProjectRouter.name,
-          path: 'project-screen',
+          FavoriteRouter.name,
+          path: 'favorite-screen',
         );
 
-  static const String name = 'ProjectRouter';
+  static const String name = 'FavoriteRouter';
 }
 
 /// generated route for
-/// [_i1.NotificationScreen]
-class NotificationRouter extends _i4.PageRouteInfo<void> {
-  const NotificationRouter()
-      : super(
-          NotificationRouter.name,
-          path: 'notification-screen',
+/// [_i1.DetailScreen]
+class DetailRouter extends _i4.PageRouteInfo<DetailRouterArgs> {
+  DetailRouter({
+    _i5.Key? key,
+    required _i6.PokemonModel pokemon,
+  }) : super(
+          DetailRouter.name,
+          path: 'detail-screen',
+          args: DetailRouterArgs(
+            key: key,
+            pokemon: pokemon,
+          ),
         );
 
-  static const String name = 'NotificationRouter';
+  static const String name = 'DetailRouter';
+}
+
+class DetailRouterArgs {
+  const DetailRouterArgs({
+    this.key,
+    required this.pokemon,
+  });
+
+  final _i5.Key? key;
+
+  final _i6.PokemonModel pokemon;
+
+  @override
+  String toString() {
+    return 'DetailRouterArgs{key: $key, pokemon: $pokemon}';
+  }
 }
