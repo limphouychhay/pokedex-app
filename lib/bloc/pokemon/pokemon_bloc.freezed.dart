@@ -19,32 +19,38 @@ mixin _$PokemonEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetch,
+    required TResult Function(PokemonModel pokemonModel) addFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetch,
+    TResult? Function(PokemonModel pokemonModel)? addFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetch,
+    TResult Function(PokemonModel pokemonModel)? addFavorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FetchPokemon value) fetch,
+    required TResult Function(_AddFavoritePokemon value) addFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FetchPokemon value)? fetch,
+    TResult? Function(_AddFavoritePokemon value)? addFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FetchPokemon value)? fetch,
+    TResult Function(_AddFavoritePokemon value)? addFavorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +113,7 @@ class _$_FetchPokemon implements _FetchPokemon {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetch,
+    required TResult Function(PokemonModel pokemonModel) addFavorite,
   }) {
     return fetch();
   }
@@ -115,6 +122,7 @@ class _$_FetchPokemon implements _FetchPokemon {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? fetch,
+    TResult? Function(PokemonModel pokemonModel)? addFavorite,
   }) {
     return fetch?.call();
   }
@@ -123,6 +131,7 @@ class _$_FetchPokemon implements _FetchPokemon {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetch,
+    TResult Function(PokemonModel pokemonModel)? addFavorite,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -135,6 +144,7 @@ class _$_FetchPokemon implements _FetchPokemon {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_FetchPokemon value) fetch,
+    required TResult Function(_AddFavoritePokemon value) addFavorite,
   }) {
     return fetch(this);
   }
@@ -143,6 +153,7 @@ class _$_FetchPokemon implements _FetchPokemon {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_FetchPokemon value)? fetch,
+    TResult? Function(_AddFavoritePokemon value)? addFavorite,
   }) {
     return fetch?.call(this);
   }
@@ -151,6 +162,7 @@ class _$_FetchPokemon implements _FetchPokemon {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_FetchPokemon value)? fetch,
+    TResult Function(_AddFavoritePokemon value)? addFavorite,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -165,12 +177,159 @@ abstract class _FetchPokemon implements PokemonEvent {
 }
 
 /// @nodoc
+abstract class _$$_AddFavoritePokemonCopyWith<$Res> {
+  factory _$$_AddFavoritePokemonCopyWith(_$_AddFavoritePokemon value,
+          $Res Function(_$_AddFavoritePokemon) then) =
+      __$$_AddFavoritePokemonCopyWithImpl<$Res>;
+  @useResult
+  $Res call({PokemonModel pokemonModel});
+
+  $PokemonModelCopyWith<$Res> get pokemonModel;
+}
+
+/// @nodoc
+class __$$_AddFavoritePokemonCopyWithImpl<$Res>
+    extends _$PokemonEventCopyWithImpl<$Res, _$_AddFavoritePokemon>
+    implements _$$_AddFavoritePokemonCopyWith<$Res> {
+  __$$_AddFavoritePokemonCopyWithImpl(
+      _$_AddFavoritePokemon _value, $Res Function(_$_AddFavoritePokemon) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pokemonModel = null,
+  }) {
+    return _then(_$_AddFavoritePokemon(
+      pokemonModel: null == pokemonModel
+          ? _value.pokemonModel
+          : pokemonModel // ignore: cast_nullable_to_non_nullable
+              as PokemonModel,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PokemonModelCopyWith<$Res> get pokemonModel {
+    return $PokemonModelCopyWith<$Res>(_value.pokemonModel, (value) {
+      return _then(_value.copyWith(pokemonModel: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_AddFavoritePokemon implements _AddFavoritePokemon {
+  const _$_AddFavoritePokemon({required this.pokemonModel});
+
+  @override
+  final PokemonModel pokemonModel;
+
+  @override
+  String toString() {
+    return 'PokemonEvent.addFavorite(pokemonModel: $pokemonModel)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_AddFavoritePokemon &&
+            (identical(other.pokemonModel, pokemonModel) ||
+                other.pokemonModel == pokemonModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, pokemonModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AddFavoritePokemonCopyWith<_$_AddFavoritePokemon> get copyWith =>
+      __$$_AddFavoritePokemonCopyWithImpl<_$_AddFavoritePokemon>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fetch,
+    required TResult Function(PokemonModel pokemonModel) addFavorite,
+  }) {
+    return addFavorite(pokemonModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fetch,
+    TResult? Function(PokemonModel pokemonModel)? addFavorite,
+  }) {
+    return addFavorite?.call(pokemonModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fetch,
+    TResult Function(PokemonModel pokemonModel)? addFavorite,
+    required TResult orElse(),
+  }) {
+    if (addFavorite != null) {
+      return addFavorite(pokemonModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FetchPokemon value) fetch,
+    required TResult Function(_AddFavoritePokemon value) addFavorite,
+  }) {
+    return addFavorite(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FetchPokemon value)? fetch,
+    TResult? Function(_AddFavoritePokemon value)? addFavorite,
+  }) {
+    return addFavorite?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FetchPokemon value)? fetch,
+    TResult Function(_AddFavoritePokemon value)? addFavorite,
+    required TResult orElse(),
+  }) {
+    if (addFavorite != null) {
+      return addFavorite(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddFavoritePokemon implements PokemonEvent {
+  const factory _AddFavoritePokemon(
+      {required final PokemonModel pokemonModel}) = _$_AddFavoritePokemon;
+
+  PokemonModel get pokemonModel;
+  @JsonKey(ignore: true)
+  _$$_AddFavoritePokemonCopyWith<_$_AddFavoritePokemon> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$PokemonState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() pokemonNotFetch,
     required TResult Function() pokemonFetchInProgress,
-    required TResult Function(PokemonResponseModel pokemonResponseModel)
+    required TResult Function(PokemonResponseModel pokemonResponseModel,
+            List<PokemonModel> favoritePokemonList)
         pokemonFetchSucceed,
     required TResult Function() pokemonFetchFailed,
   }) =>
@@ -179,7 +338,8 @@ mixin _$PokemonState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? pokemonNotFetch,
     TResult? Function()? pokemonFetchInProgress,
-    TResult? Function(PokemonResponseModel pokemonResponseModel)?
+    TResult? Function(PokemonResponseModel pokemonResponseModel,
+            List<PokemonModel> favoritePokemonList)?
         pokemonFetchSucceed,
     TResult? Function()? pokemonFetchFailed,
   }) =>
@@ -188,7 +348,8 @@ mixin _$PokemonState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? pokemonNotFetch,
     TResult Function()? pokemonFetchInProgress,
-    TResult Function(PokemonResponseModel pokemonResponseModel)?
+    TResult Function(PokemonResponseModel pokemonResponseModel,
+            List<PokemonModel> favoritePokemonList)?
         pokemonFetchSucceed,
     TResult Function()? pokemonFetchFailed,
     required TResult orElse(),
@@ -280,7 +441,8 @@ class _$PokemonNotFetch implements PokemonNotFetch {
   TResult when<TResult extends Object?>({
     required TResult Function() pokemonNotFetch,
     required TResult Function() pokemonFetchInProgress,
-    required TResult Function(PokemonResponseModel pokemonResponseModel)
+    required TResult Function(PokemonResponseModel pokemonResponseModel,
+            List<PokemonModel> favoritePokemonList)
         pokemonFetchSucceed,
     required TResult Function() pokemonFetchFailed,
   }) {
@@ -292,7 +454,8 @@ class _$PokemonNotFetch implements PokemonNotFetch {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? pokemonNotFetch,
     TResult? Function()? pokemonFetchInProgress,
-    TResult? Function(PokemonResponseModel pokemonResponseModel)?
+    TResult? Function(PokemonResponseModel pokemonResponseModel,
+            List<PokemonModel> favoritePokemonList)?
         pokemonFetchSucceed,
     TResult? Function()? pokemonFetchFailed,
   }) {
@@ -304,7 +467,8 @@ class _$PokemonNotFetch implements PokemonNotFetch {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? pokemonNotFetch,
     TResult Function()? pokemonFetchInProgress,
-    TResult Function(PokemonResponseModel pokemonResponseModel)?
+    TResult Function(PokemonResponseModel pokemonResponseModel,
+            List<PokemonModel> favoritePokemonList)?
         pokemonFetchSucceed,
     TResult Function()? pokemonFetchFailed,
     required TResult orElse(),
@@ -398,7 +562,8 @@ class _$PokemonFetchInProgress implements PokemonFetchInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() pokemonNotFetch,
     required TResult Function() pokemonFetchInProgress,
-    required TResult Function(PokemonResponseModel pokemonResponseModel)
+    required TResult Function(PokemonResponseModel pokemonResponseModel,
+            List<PokemonModel> favoritePokemonList)
         pokemonFetchSucceed,
     required TResult Function() pokemonFetchFailed,
   }) {
@@ -410,7 +575,8 @@ class _$PokemonFetchInProgress implements PokemonFetchInProgress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? pokemonNotFetch,
     TResult? Function()? pokemonFetchInProgress,
-    TResult? Function(PokemonResponseModel pokemonResponseModel)?
+    TResult? Function(PokemonResponseModel pokemonResponseModel,
+            List<PokemonModel> favoritePokemonList)?
         pokemonFetchSucceed,
     TResult? Function()? pokemonFetchFailed,
   }) {
@@ -422,7 +588,8 @@ class _$PokemonFetchInProgress implements PokemonFetchInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? pokemonNotFetch,
     TResult Function()? pokemonFetchInProgress,
-    TResult Function(PokemonResponseModel pokemonResponseModel)?
+    TResult Function(PokemonResponseModel pokemonResponseModel,
+            List<PokemonModel> favoritePokemonList)?
         pokemonFetchSucceed,
     TResult Function()? pokemonFetchFailed,
     required TResult orElse(),
@@ -482,7 +649,9 @@ abstract class _$$PokemonFetchSucceedCopyWith<$Res> {
           $Res Function(_$PokemonFetchSucceed) then) =
       __$$PokemonFetchSucceedCopyWithImpl<$Res>;
   @useResult
-  $Res call({PokemonResponseModel pokemonResponseModel});
+  $Res call(
+      {PokemonResponseModel pokemonResponseModel,
+      List<PokemonModel> favoritePokemonList});
 
   $PokemonResponseModelCopyWith<$Res> get pokemonResponseModel;
 }
@@ -499,12 +668,17 @@ class __$$PokemonFetchSucceedCopyWithImpl<$Res>
   @override
   $Res call({
     Object? pokemonResponseModel = null,
+    Object? favoritePokemonList = null,
   }) {
     return _then(_$PokemonFetchSucceed(
       pokemonResponseModel: null == pokemonResponseModel
           ? _value.pokemonResponseModel
           : pokemonResponseModel // ignore: cast_nullable_to_non_nullable
               as PokemonResponseModel,
+      favoritePokemonList: null == favoritePokemonList
+          ? _value._favoritePokemonList
+          : favoritePokemonList // ignore: cast_nullable_to_non_nullable
+              as List<PokemonModel>,
     ));
   }
 
@@ -521,14 +695,23 @@ class __$$PokemonFetchSucceedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$PokemonFetchSucceed implements PokemonFetchSucceed {
-  const _$PokemonFetchSucceed({required this.pokemonResponseModel});
+  const _$PokemonFetchSucceed(
+      {required this.pokemonResponseModel,
+      required final List<PokemonModel> favoritePokemonList})
+      : _favoritePokemonList = favoritePokemonList;
 
   @override
   final PokemonResponseModel pokemonResponseModel;
+  final List<PokemonModel> _favoritePokemonList;
+  @override
+  List<PokemonModel> get favoritePokemonList {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_favoritePokemonList);
+  }
 
   @override
   String toString() {
-    return 'PokemonState.pokemonFetchSucceed(pokemonResponseModel: $pokemonResponseModel)';
+    return 'PokemonState.pokemonFetchSucceed(pokemonResponseModel: $pokemonResponseModel, favoritePokemonList: $favoritePokemonList)';
   }
 
   @override
@@ -537,11 +720,14 @@ class _$PokemonFetchSucceed implements PokemonFetchSucceed {
         (other.runtimeType == runtimeType &&
             other is _$PokemonFetchSucceed &&
             (identical(other.pokemonResponseModel, pokemonResponseModel) ||
-                other.pokemonResponseModel == pokemonResponseModel));
+                other.pokemonResponseModel == pokemonResponseModel) &&
+            const DeepCollectionEquality()
+                .equals(other._favoritePokemonList, _favoritePokemonList));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, pokemonResponseModel);
+  int get hashCode => Object.hash(runtimeType, pokemonResponseModel,
+      const DeepCollectionEquality().hash(_favoritePokemonList));
 
   @JsonKey(ignore: true)
   @override
@@ -555,11 +741,12 @@ class _$PokemonFetchSucceed implements PokemonFetchSucceed {
   TResult when<TResult extends Object?>({
     required TResult Function() pokemonNotFetch,
     required TResult Function() pokemonFetchInProgress,
-    required TResult Function(PokemonResponseModel pokemonResponseModel)
+    required TResult Function(PokemonResponseModel pokemonResponseModel,
+            List<PokemonModel> favoritePokemonList)
         pokemonFetchSucceed,
     required TResult Function() pokemonFetchFailed,
   }) {
-    return pokemonFetchSucceed(pokemonResponseModel);
+    return pokemonFetchSucceed(pokemonResponseModel, favoritePokemonList);
   }
 
   @override
@@ -567,11 +754,12 @@ class _$PokemonFetchSucceed implements PokemonFetchSucceed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? pokemonNotFetch,
     TResult? Function()? pokemonFetchInProgress,
-    TResult? Function(PokemonResponseModel pokemonResponseModel)?
+    TResult? Function(PokemonResponseModel pokemonResponseModel,
+            List<PokemonModel> favoritePokemonList)?
         pokemonFetchSucceed,
     TResult? Function()? pokemonFetchFailed,
   }) {
-    return pokemonFetchSucceed?.call(pokemonResponseModel);
+    return pokemonFetchSucceed?.call(pokemonResponseModel, favoritePokemonList);
   }
 
   @override
@@ -579,13 +767,14 @@ class _$PokemonFetchSucceed implements PokemonFetchSucceed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? pokemonNotFetch,
     TResult Function()? pokemonFetchInProgress,
-    TResult Function(PokemonResponseModel pokemonResponseModel)?
+    TResult Function(PokemonResponseModel pokemonResponseModel,
+            List<PokemonModel> favoritePokemonList)?
         pokemonFetchSucceed,
     TResult Function()? pokemonFetchFailed,
     required TResult orElse(),
   }) {
     if (pokemonFetchSucceed != null) {
-      return pokemonFetchSucceed(pokemonResponseModel);
+      return pokemonFetchSucceed(pokemonResponseModel, favoritePokemonList);
     }
     return orElse();
   }
@@ -631,10 +820,12 @@ class _$PokemonFetchSucceed implements PokemonFetchSucceed {
 
 abstract class PokemonFetchSucceed implements PokemonState {
   const factory PokemonFetchSucceed(
-          {required final PokemonResponseModel pokemonResponseModel}) =
+          {required final PokemonResponseModel pokemonResponseModel,
+          required final List<PokemonModel> favoritePokemonList}) =
       _$PokemonFetchSucceed;
 
   PokemonResponseModel get pokemonResponseModel;
+  List<PokemonModel> get favoritePokemonList;
   @JsonKey(ignore: true)
   _$$PokemonFetchSucceedCopyWith<_$PokemonFetchSucceed> get copyWith =>
       throw _privateConstructorUsedError;
@@ -680,7 +871,8 @@ class _$PokemonFetchFailed implements PokemonFetchFailed {
   TResult when<TResult extends Object?>({
     required TResult Function() pokemonNotFetch,
     required TResult Function() pokemonFetchInProgress,
-    required TResult Function(PokemonResponseModel pokemonResponseModel)
+    required TResult Function(PokemonResponseModel pokemonResponseModel,
+            List<PokemonModel> favoritePokemonList)
         pokemonFetchSucceed,
     required TResult Function() pokemonFetchFailed,
   }) {
@@ -692,7 +884,8 @@ class _$PokemonFetchFailed implements PokemonFetchFailed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? pokemonNotFetch,
     TResult? Function()? pokemonFetchInProgress,
-    TResult? Function(PokemonResponseModel pokemonResponseModel)?
+    TResult? Function(PokemonResponseModel pokemonResponseModel,
+            List<PokemonModel> favoritePokemonList)?
         pokemonFetchSucceed,
     TResult? Function()? pokemonFetchFailed,
   }) {
@@ -704,7 +897,8 @@ class _$PokemonFetchFailed implements PokemonFetchFailed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? pokemonNotFetch,
     TResult Function()? pokemonFetchInProgress,
-    TResult Function(PokemonResponseModel pokemonResponseModel)?
+    TResult Function(PokemonResponseModel pokemonResponseModel,
+            List<PokemonModel> favoritePokemonList)?
         pokemonFetchSucceed,
     TResult Function()? pokemonFetchFailed,
     required TResult orElse(),
