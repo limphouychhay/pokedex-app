@@ -33,6 +33,9 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           DetailRouter(
                             pokemon: pokemonList[index],
+                            isShowFavorite: true,
+                            // pokemonList: pokemonList,
+                            // index: index,
                           ),
                         ],
                       ),

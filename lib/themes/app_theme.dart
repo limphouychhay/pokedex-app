@@ -65,21 +65,21 @@ class AppTheme {
         foregroundColor: Colors.black,
       ),
       textTheme: const TextTheme(
-        headline1: TextStyle(
+        displayLarge: TextStyle(
           color: Colors.black,
           fontSize: 20.0,
           fontWeight: FontWeight.bold,
         ),
-        headline2: TextStyle(
+        displayMedium: TextStyle(
           color: Colors.black,
           fontSize: 17.0,
           fontWeight: FontWeight.w700,
         ),
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
           color: Colors.black,
           fontSize: 15,
         ),
-        bodyText2: TextStyle(
+        bodyMedium: TextStyle(
           color: AppColors.darkBlue,
           fontSize: 13,
         ),
