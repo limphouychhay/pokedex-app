@@ -19,7 +19,7 @@ class DashboardTab extends HookWidget {
       builder: (context, child, animation) {
         final tabsRouter = AutoTabsRouter.of(context);
 
-        AppBar _dynamicAppBar() {
+        AppBar dynamicAppBar() {
           if (tabsRouter.activeIndex == 0) {
             return AppBar(
               backgroundColor: Colors.transparent,
@@ -37,7 +37,7 @@ class DashboardTab extends HookWidget {
 
         return Scaffold(
           extendBody: true,
-          appBar: _dynamicAppBar(),
+          appBar: dynamicAppBar(),
           body: FadeTransition(
             opacity: animation,
             child: child,

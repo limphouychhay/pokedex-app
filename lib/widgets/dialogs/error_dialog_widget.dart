@@ -21,7 +21,7 @@ class ErrorDialogWidget extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    void _handleClosePressed() {
+    void handleClosePressed() {
       Navigator.of(context).pop();
       if (onPressed != null) {
         onPressed!();
@@ -55,7 +55,7 @@ class ErrorDialogWidget extends HookWidget {
             const SizedBox(height: 57),
             ButtonWidget(
               text: 'Close',
-              onPressed: _handleClosePressed,
+              onPressed: handleClosePressed,
             )
           ],
         ),

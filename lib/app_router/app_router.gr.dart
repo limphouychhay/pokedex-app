@@ -74,6 +74,7 @@ class AppRouter extends _i4.RootStackRouter {
         child: _i1.DetailScreen(
           key: args.key,
           pokemon: args.pokemon,
+          isShowFavorite: args.isShowFavorite,
         ),
       );
     },
@@ -219,12 +220,14 @@ class DetailRouter extends _i4.PageRouteInfo<DetailRouterArgs> {
   DetailRouter({
     _i5.Key? key,
     required _i6.PokemonModel pokemon,
+    required bool isShowFavorite,
   }) : super(
           DetailRouter.name,
           path: 'detail-screen',
           args: DetailRouterArgs(
             key: key,
             pokemon: pokemon,
+            isShowFavorite: isShowFavorite,
           ),
         );
 
@@ -235,14 +238,17 @@ class DetailRouterArgs {
   const DetailRouterArgs({
     this.key,
     required this.pokemon,
+    required this.isShowFavorite,
   });
 
   final _i5.Key? key;
 
   final _i6.PokemonModel pokemon;
 
+  final bool isShowFavorite;
+
   @override
   String toString() {
-    return 'DetailRouterArgs{key: $key, pokemon: $pokemon}';
+    return 'DetailRouterArgs{key: $key, pokemon: $pokemon, isShowFavorite: $isShowFavorite}';
   }
 }
