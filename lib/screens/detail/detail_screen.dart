@@ -4,9 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:pokedex_app/bloc/pokemon/pokemon_bloc.dart';
 import 'package:pokedex_app/extensions/extensions.dart';
-import 'package:pokedex_app/main.dart';
 import 'package:pokedex_app/models/models.dart';
-import 'package:pokedex_app/themes/app_theme.dart';
 import 'package:pokedex_app/utils/ui_error_util.dart';
 import 'package:pokedex_app/utils/utils.dart';
 
