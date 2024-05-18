@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'button_model.dart';
 
@@ -12,7 +12,7 @@ part of 'button_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ButtonModel {
@@ -93,11 +93,11 @@ class _$ButtonModelCopyWithImpl<$Res, $Val extends ButtonModel>
 }
 
 /// @nodoc
-abstract class _$$_ButtonModelCopyWith<$Res>
+abstract class _$$ButtonModelImplCopyWith<$Res>
     implements $ButtonModelCopyWith<$Res> {
-  factory _$$_ButtonModelCopyWith(
-          _$_ButtonModel value, $Res Function(_$_ButtonModel) then) =
-      __$$_ButtonModelCopyWithImpl<$Res>;
+  factory _$$ButtonModelImplCopyWith(
+          _$ButtonModelImpl value, $Res Function(_$ButtonModelImpl) then) =
+      __$$ButtonModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -110,11 +110,11 @@ abstract class _$$_ButtonModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ButtonModelCopyWithImpl<$Res>
-    extends _$ButtonModelCopyWithImpl<$Res, _$_ButtonModel>
-    implements _$$_ButtonModelCopyWith<$Res> {
-  __$$_ButtonModelCopyWithImpl(
-      _$_ButtonModel _value, $Res Function(_$_ButtonModel) _then)
+class __$$ButtonModelImplCopyWithImpl<$Res>
+    extends _$ButtonModelCopyWithImpl<$Res, _$ButtonModelImpl>
+    implements _$$ButtonModelImplCopyWith<$Res> {
+  __$$ButtonModelImplCopyWithImpl(
+      _$ButtonModelImpl _value, $Res Function(_$ButtonModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -127,7 +127,7 @@ class __$$_ButtonModelCopyWithImpl<$Res>
     Object? fontWeight = freezed,
     Object? color = freezed,
   }) {
-    return _then(_$_ButtonModel(
+    return _then(_$ButtonModelImpl(
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -158,8 +158,8 @@ class __$$_ButtonModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ButtonModel implements _ButtonModel {
-  const _$_ButtonModel(
+class _$ButtonModelImpl implements _ButtonModel {
+  const _$ButtonModelImpl(
       {this.text = 'button.close',
       this.isTransparent = false,
       this.icon,
@@ -188,10 +188,10 @@ class _$_ButtonModel implements _ButtonModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ButtonModel &&
+            other is _$ButtonModelImpl &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.isTransparent, isTransparent) ||
                 other.isTransparent == isTransparent) &&
@@ -209,8 +209,8 @@ class _$_ButtonModel implements _ButtonModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ButtonModelCopyWith<_$_ButtonModel> get copyWith =>
-      __$$_ButtonModelCopyWithImpl<_$_ButtonModel>(this, _$identity);
+  _$$ButtonModelImplCopyWith<_$ButtonModelImpl> get copyWith =>
+      __$$ButtonModelImplCopyWithImpl<_$ButtonModelImpl>(this, _$identity);
 }
 
 abstract class _ButtonModel implements ButtonModel {
@@ -220,7 +220,7 @@ abstract class _ButtonModel implements ButtonModel {
       final Widget? icon,
       final Function? onPress,
       final FontWeight? fontWeight,
-      final Color? color}) = _$_ButtonModel;
+      final Color? color}) = _$ButtonModelImpl;
 
   @override
   String get text;
@@ -236,6 +236,6 @@ abstract class _ButtonModel implements ButtonModel {
   Color? get color;
   @override
   @JsonKey(ignore: true)
-  _$$_ButtonModelCopyWith<_$_ButtonModel> get copyWith =>
+  _$$ButtonModelImplCopyWith<_$ButtonModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

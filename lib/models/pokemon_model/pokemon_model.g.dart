@@ -6,8 +6,8 @@ part of 'pokemon_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PokemonModel _$$_PokemonModelFromJson(Map<String, dynamic> json) =>
-    _$_PokemonModel(
+_$PokemonModelImpl _$$PokemonModelImplFromJson(Map<String, dynamic> json) =>
+    _$PokemonModelImpl(
       name: json['name'] as String? ?? 'N/A',
       id: json['id'] as String,
       imageUrl: json['imageurl'] as String?,
@@ -28,16 +28,16 @@ _$_PokemonModel _$$_PokemonModelFromJson(Map<String, dynamic> json) =>
       abilities: (json['abilities'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      hp: json['hp'] as int?,
-      attack: json['attack'] as int?,
-      defense: json['defense'] as int?,
-      specialAttack: json['special_attack'] as int?,
-      specialDefense: json['special_defense'] as int?,
-      speed: json['speed'] as int?,
-      total: json['total'] as int?,
+      hp: (json['hp'] as num?)?.toInt(),
+      attack: (json['attack'] as num?)?.toInt(),
+      defense: (json['defense'] as num?)?.toInt(),
+      specialAttack: (json['special_attack'] as num?)?.toInt(),
+      specialDefense: (json['special_defense'] as num?)?.toInt(),
+      speed: (json['speed'] as num?)?.toInt(),
+      total: (json['total'] as num?)?.toInt(),
       malePercentage: json['male_percentage'] as String?,
       femalePercentage: json['female_percentage'] as String?,
-      genderless: json['genderless'] as int?,
+      genderless: (json['genderless'] as num?)?.toInt(),
       cycles: json['cycles'] as String?,
       eggGroups: json['egg_groups'] as String?,
       evolvedFrom: json['evolvedFrom'] as String?,
@@ -45,7 +45,7 @@ _$_PokemonModel _$$_PokemonModelFromJson(Map<String, dynamic> json) =>
       baseExp: json['base_exp'] as String?,
     );
 
-Map<String, dynamic> _$$_PokemonModelToJson(_$_PokemonModel instance) =>
+Map<String, dynamic> _$$PokemonModelImplToJson(_$PokemonModelImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'id': instance.id,

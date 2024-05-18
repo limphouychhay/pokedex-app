@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'pokemon_model.dart';
 
@@ -12,7 +12,7 @@ part of 'pokemon_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 PokemonModel _$PokemonModelFromJson(Map<String, dynamic> json) {
   return _PokemonModel.fromJson(json);
@@ -255,11 +255,11 @@ class _$PokemonModelCopyWithImpl<$Res, $Val extends PokemonModel>
 }
 
 /// @nodoc
-abstract class _$$_PokemonModelCopyWith<$Res>
+abstract class _$$PokemonModelImplCopyWith<$Res>
     implements $PokemonModelCopyWith<$Res> {
-  factory _$$_PokemonModelCopyWith(
-          _$_PokemonModel value, $Res Function(_$_PokemonModel) then) =
-      __$$_PokemonModelCopyWithImpl<$Res>;
+  factory _$$PokemonModelImplCopyWith(
+          _$PokemonModelImpl value, $Res Function(_$PokemonModelImpl) then) =
+      __$$PokemonModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -293,11 +293,11 @@ abstract class _$$_PokemonModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PokemonModelCopyWithImpl<$Res>
-    extends _$PokemonModelCopyWithImpl<$Res, _$_PokemonModel>
-    implements _$$_PokemonModelCopyWith<$Res> {
-  __$$_PokemonModelCopyWithImpl(
-      _$_PokemonModel _value, $Res Function(_$_PokemonModel) _then)
+class __$$PokemonModelImplCopyWithImpl<$Res>
+    extends _$PokemonModelCopyWithImpl<$Res, _$PokemonModelImpl>
+    implements _$$PokemonModelImplCopyWith<$Res> {
+  __$$PokemonModelImplCopyWithImpl(
+      _$PokemonModelImpl _value, $Res Function(_$PokemonModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -331,7 +331,7 @@ class __$$_PokemonModelCopyWithImpl<$Res>
     Object? reason = freezed,
     Object? baseExp = freezed,
   }) {
-    return _then(_$_PokemonModel(
+    return _then(_$PokemonModelImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -446,8 +446,8 @@ class __$$_PokemonModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PokemonModel implements _PokemonModel {
-  const _$_PokemonModel(
+class _$PokemonModelImpl implements _PokemonModel {
+  const _$PokemonModelImpl(
       {this.name = 'N/A',
       required this.id,
       @JsonKey(name: 'imageurl') this.imageUrl,
@@ -480,8 +480,8 @@ class _$_PokemonModel implements _PokemonModel {
         _evolutions = evolutions,
         _abilities = abilities;
 
-  factory _$_PokemonModel.fromJson(Map<String, dynamic> json) =>
-      _$$_PokemonModelFromJson(json);
+  factory _$PokemonModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PokemonModelImplFromJson(json);
 
   @override
   @JsonKey()
@@ -509,6 +509,7 @@ class _$_PokemonModel implements _PokemonModel {
   List<String>? get typeOfPokemon {
     final value = _typeOfPokemon;
     if (value == null) return null;
+    if (_typeOfPokemon is EqualUnmodifiableListView) return _typeOfPokemon;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -518,6 +519,7 @@ class _$_PokemonModel implements _PokemonModel {
   List<String>? get weaknesses {
     final value = _weaknesses;
     if (value == null) return null;
+    if (_weaknesses is EqualUnmodifiableListView) return _weaknesses;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -527,6 +529,7 @@ class _$_PokemonModel implements _PokemonModel {
   List<String>? get evolutions {
     final value = _evolutions;
     if (value == null) return null;
+    if (_evolutions is EqualUnmodifiableListView) return _evolutions;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -536,6 +539,7 @@ class _$_PokemonModel implements _PokemonModel {
   List<String>? get abilities {
     final value = _abilities;
     if (value == null) return null;
+    if (_abilities is EqualUnmodifiableListView) return _abilities;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -583,10 +587,10 @@ class _$_PokemonModel implements _PokemonModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PokemonModel &&
+            other is _$PokemonModelImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.imageUrl, imageUrl) ||
@@ -667,12 +671,12 @@ class _$_PokemonModel implements _PokemonModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PokemonModelCopyWith<_$_PokemonModel> get copyWith =>
-      __$$_PokemonModelCopyWithImpl<_$_PokemonModel>(this, _$identity);
+  _$$PokemonModelImplCopyWith<_$PokemonModelImpl> get copyWith =>
+      __$$PokemonModelImplCopyWithImpl<_$PokemonModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PokemonModelToJson(
+    return _$$PokemonModelImplToJson(
       this,
     );
   }
@@ -706,10 +710,10 @@ abstract class _PokemonModel implements PokemonModel {
       @JsonKey(name: 'egg_groups') final String? eggGroups,
       final String? evolvedFrom,
       final String? reason,
-      @JsonKey(name: 'base_exp') final String? baseExp}) = _$_PokemonModel;
+      @JsonKey(name: 'base_exp') final String? baseExp}) = _$PokemonModelImpl;
 
   factory _PokemonModel.fromJson(Map<String, dynamic> json) =
-      _$_PokemonModel.fromJson;
+      _$PokemonModelImpl.fromJson;
 
   @override
   String get name;
@@ -777,6 +781,6 @@ abstract class _PokemonModel implements PokemonModel {
   String? get baseExp;
   @override
   @JsonKey(ignore: true)
-  _$$_PokemonModelCopyWith<_$_PokemonModel> get copyWith =>
+  _$$PokemonModelImplCopyWith<_$PokemonModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'favorite_pokemon_bloc.dart';
 
@@ -12,7 +12,7 @@ part of 'favorite_pokemon_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$FavoritePokemonEvent {
@@ -130,11 +130,12 @@ class _$FavoritePokemonEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_RemoveFavoritePokemonCopyWith<$Res>
+abstract class _$$RemoveFavoritePokemonImplCopyWith<$Res>
     implements $FavoritePokemonEventCopyWith<$Res> {
-  factory _$$_RemoveFavoritePokemonCopyWith(_$_RemoveFavoritePokemon value,
-          $Res Function(_$_RemoveFavoritePokemon) then) =
-      __$$_RemoveFavoritePokemonCopyWithImpl<$Res>;
+  factory _$$RemoveFavoritePokemonImplCopyWith(
+          _$RemoveFavoritePokemonImpl value,
+          $Res Function(_$RemoveFavoritePokemonImpl) then) =
+      __$$RemoveFavoritePokemonImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<PokemonModel> pokemonList, PokemonModel pokemon, int index});
@@ -144,11 +145,12 @@ abstract class _$$_RemoveFavoritePokemonCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RemoveFavoritePokemonCopyWithImpl<$Res>
-    extends _$FavoritePokemonEventCopyWithImpl<$Res, _$_RemoveFavoritePokemon>
-    implements _$$_RemoveFavoritePokemonCopyWith<$Res> {
-  __$$_RemoveFavoritePokemonCopyWithImpl(_$_RemoveFavoritePokemon _value,
-      $Res Function(_$_RemoveFavoritePokemon) _then)
+class __$$RemoveFavoritePokemonImplCopyWithImpl<$Res>
+    extends _$FavoritePokemonEventCopyWithImpl<$Res,
+        _$RemoveFavoritePokemonImpl>
+    implements _$$RemoveFavoritePokemonImplCopyWith<$Res> {
+  __$$RemoveFavoritePokemonImplCopyWithImpl(_$RemoveFavoritePokemonImpl _value,
+      $Res Function(_$RemoveFavoritePokemonImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -158,7 +160,7 @@ class __$$_RemoveFavoritePokemonCopyWithImpl<$Res>
     Object? pokemon = null,
     Object? index = null,
   }) {
-    return _then(_$_RemoveFavoritePokemon(
+    return _then(_$RemoveFavoritePokemonImpl(
       pokemonList: null == pokemonList
           ? _value._pokemonList
           : pokemonList // ignore: cast_nullable_to_non_nullable
@@ -177,8 +179,8 @@ class __$$_RemoveFavoritePokemonCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RemoveFavoritePokemon implements _RemoveFavoritePokemon {
-  const _$_RemoveFavoritePokemon(
+class _$RemoveFavoritePokemonImpl implements _RemoveFavoritePokemon {
+  const _$RemoveFavoritePokemonImpl(
       {required final List<PokemonModel> pokemonList,
       required this.pokemon,
       required this.index})
@@ -187,6 +189,7 @@ class _$_RemoveFavoritePokemon implements _RemoveFavoritePokemon {
   final List<PokemonModel> _pokemonList;
   @override
   List<PokemonModel> get pokemonList {
+    if (_pokemonList is EqualUnmodifiableListView) return _pokemonList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_pokemonList);
   }
@@ -202,10 +205,10 @@ class _$_RemoveFavoritePokemon implements _RemoveFavoritePokemon {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RemoveFavoritePokemon &&
+            other is _$RemoveFavoritePokemonImpl &&
             const DeepCollectionEquality()
                 .equals(other._pokemonList, _pokemonList) &&
             (identical(other.pokemon, pokemon) || other.pokemon == pokemon) &&
@@ -219,9 +222,9 @@ class _$_RemoveFavoritePokemon implements _RemoveFavoritePokemon {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RemoveFavoritePokemonCopyWith<_$_RemoveFavoritePokemon> get copyWith =>
-      __$$_RemoveFavoritePokemonCopyWithImpl<_$_RemoveFavoritePokemon>(
-          this, _$identity);
+  _$$RemoveFavoritePokemonImplCopyWith<_$RemoveFavoritePokemonImpl>
+      get copyWith => __$$RemoveFavoritePokemonImplCopyWithImpl<
+          _$RemoveFavoritePokemonImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -302,7 +305,7 @@ abstract class _RemoveFavoritePokemon implements FavoritePokemonEvent {
   const factory _RemoveFavoritePokemon(
       {required final List<PokemonModel> pokemonList,
       required final PokemonModel pokemon,
-      required final int index}) = _$_RemoveFavoritePokemon;
+      required final int index}) = _$RemoveFavoritePokemonImpl;
 
   @override
   List<PokemonModel> get pokemonList;
@@ -312,16 +315,16 @@ abstract class _RemoveFavoritePokemon implements FavoritePokemonEvent {
   int get index;
   @override
   @JsonKey(ignore: true)
-  _$$_RemoveFavoritePokemonCopyWith<_$_RemoveFavoritePokemon> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RemoveFavoritePokemonImplCopyWith<_$RemoveFavoritePokemonImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_AddFavoritePokemonCopyWith<$Res>
+abstract class _$$AddFavoritePokemonImplCopyWith<$Res>
     implements $FavoritePokemonEventCopyWith<$Res> {
-  factory _$$_AddFavoritePokemonCopyWith(_$_AddFavoritePokemon value,
-          $Res Function(_$_AddFavoritePokemon) then) =
-      __$$_AddFavoritePokemonCopyWithImpl<$Res>;
+  factory _$$AddFavoritePokemonImplCopyWith(_$AddFavoritePokemonImpl value,
+          $Res Function(_$AddFavoritePokemonImpl) then) =
+      __$$AddFavoritePokemonImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<PokemonModel> pokemonList, PokemonModel pokemon, int index});
@@ -331,11 +334,11 @@ abstract class _$$_AddFavoritePokemonCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AddFavoritePokemonCopyWithImpl<$Res>
-    extends _$FavoritePokemonEventCopyWithImpl<$Res, _$_AddFavoritePokemon>
-    implements _$$_AddFavoritePokemonCopyWith<$Res> {
-  __$$_AddFavoritePokemonCopyWithImpl(
-      _$_AddFavoritePokemon _value, $Res Function(_$_AddFavoritePokemon) _then)
+class __$$AddFavoritePokemonImplCopyWithImpl<$Res>
+    extends _$FavoritePokemonEventCopyWithImpl<$Res, _$AddFavoritePokemonImpl>
+    implements _$$AddFavoritePokemonImplCopyWith<$Res> {
+  __$$AddFavoritePokemonImplCopyWithImpl(_$AddFavoritePokemonImpl _value,
+      $Res Function(_$AddFavoritePokemonImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -345,7 +348,7 @@ class __$$_AddFavoritePokemonCopyWithImpl<$Res>
     Object? pokemon = null,
     Object? index = null,
   }) {
-    return _then(_$_AddFavoritePokemon(
+    return _then(_$AddFavoritePokemonImpl(
       pokemonList: null == pokemonList
           ? _value._pokemonList
           : pokemonList // ignore: cast_nullable_to_non_nullable
@@ -364,8 +367,8 @@ class __$$_AddFavoritePokemonCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AddFavoritePokemon implements _AddFavoritePokemon {
-  const _$_AddFavoritePokemon(
+class _$AddFavoritePokemonImpl implements _AddFavoritePokemon {
+  const _$AddFavoritePokemonImpl(
       {required final List<PokemonModel> pokemonList,
       required this.pokemon,
       required this.index})
@@ -374,6 +377,7 @@ class _$_AddFavoritePokemon implements _AddFavoritePokemon {
   final List<PokemonModel> _pokemonList;
   @override
   List<PokemonModel> get pokemonList {
+    if (_pokemonList is EqualUnmodifiableListView) return _pokemonList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_pokemonList);
   }
@@ -389,10 +393,10 @@ class _$_AddFavoritePokemon implements _AddFavoritePokemon {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AddFavoritePokemon &&
+            other is _$AddFavoritePokemonImpl &&
             const DeepCollectionEquality()
                 .equals(other._pokemonList, _pokemonList) &&
             (identical(other.pokemon, pokemon) || other.pokemon == pokemon) &&
@@ -406,8 +410,8 @@ class _$_AddFavoritePokemon implements _AddFavoritePokemon {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AddFavoritePokemonCopyWith<_$_AddFavoritePokemon> get copyWith =>
-      __$$_AddFavoritePokemonCopyWithImpl<_$_AddFavoritePokemon>(
+  _$$AddFavoritePokemonImplCopyWith<_$AddFavoritePokemonImpl> get copyWith =>
+      __$$AddFavoritePokemonImplCopyWithImpl<_$AddFavoritePokemonImpl>(
           this, _$identity);
 
   @override
@@ -489,7 +493,7 @@ abstract class _AddFavoritePokemon implements FavoritePokemonEvent {
   const factory _AddFavoritePokemon(
       {required final List<PokemonModel> pokemonList,
       required final PokemonModel pokemon,
-      required final int index}) = _$_AddFavoritePokemon;
+      required final int index}) = _$AddFavoritePokemonImpl;
 
   @override
   List<PokemonModel> get pokemonList;
@@ -499,7 +503,7 @@ abstract class _AddFavoritePokemon implements FavoritePokemonEvent {
   int get index;
   @override
   @JsonKey(ignore: true)
-  _$$_AddFavoritePokemonCopyWith<_$_AddFavoritePokemon> get copyWith =>
+  _$$AddFavoritePokemonImplCopyWith<_$AddFavoritePokemonImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -589,25 +593,28 @@ class _$FavoritePokemonStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$FavoritePokemonInitialCopyWith<$Res> {
-  factory _$$FavoritePokemonInitialCopyWith(_$FavoritePokemonInitial value,
-          $Res Function(_$FavoritePokemonInitial) then) =
-      __$$FavoritePokemonInitialCopyWithImpl<$Res>;
+abstract class _$$FavoritePokemonInitialImplCopyWith<$Res> {
+  factory _$$FavoritePokemonInitialImplCopyWith(
+          _$FavoritePokemonInitialImpl value,
+          $Res Function(_$FavoritePokemonInitialImpl) then) =
+      __$$FavoritePokemonInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FavoritePokemonInitialCopyWithImpl<$Res>
-    extends _$FavoritePokemonStateCopyWithImpl<$Res, _$FavoritePokemonInitial>
-    implements _$$FavoritePokemonInitialCopyWith<$Res> {
-  __$$FavoritePokemonInitialCopyWithImpl(_$FavoritePokemonInitial _value,
-      $Res Function(_$FavoritePokemonInitial) _then)
+class __$$FavoritePokemonInitialImplCopyWithImpl<$Res>
+    extends _$FavoritePokemonStateCopyWithImpl<$Res,
+        _$FavoritePokemonInitialImpl>
+    implements _$$FavoritePokemonInitialImplCopyWith<$Res> {
+  __$$FavoritePokemonInitialImplCopyWithImpl(
+      _$FavoritePokemonInitialImpl _value,
+      $Res Function(_$FavoritePokemonInitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$FavoritePokemonInitial implements FavoritePokemonInitial {
-  const _$FavoritePokemonInitial();
+class _$FavoritePokemonInitialImpl implements FavoritePokemonInitial {
+  const _$FavoritePokemonInitialImpl();
 
   @override
   String toString() {
@@ -615,9 +622,10 @@ class _$FavoritePokemonInitial implements FavoritePokemonInitial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FavoritePokemonInitial);
+        (other.runtimeType == runtimeType &&
+            other is _$FavoritePokemonInitialImpl);
   }
 
   @override
@@ -711,32 +719,33 @@ class _$FavoritePokemonInitial implements FavoritePokemonInitial {
 }
 
 abstract class FavoritePokemonInitial implements FavoritePokemonState {
-  const factory FavoritePokemonInitial() = _$FavoritePokemonInitial;
+  const factory FavoritePokemonInitial() = _$FavoritePokemonInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$FavoritePokemonAddInProgressCopyWith<$Res> {
-  factory _$$FavoritePokemonAddInProgressCopyWith(
-          _$FavoritePokemonAddInProgress value,
-          $Res Function(_$FavoritePokemonAddInProgress) then) =
-      __$$FavoritePokemonAddInProgressCopyWithImpl<$Res>;
+abstract class _$$FavoritePokemonAddInProgressImplCopyWith<$Res> {
+  factory _$$FavoritePokemonAddInProgressImplCopyWith(
+          _$FavoritePokemonAddInProgressImpl value,
+          $Res Function(_$FavoritePokemonAddInProgressImpl) then) =
+      __$$FavoritePokemonAddInProgressImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FavoritePokemonAddInProgressCopyWithImpl<$Res>
+class __$$FavoritePokemonAddInProgressImplCopyWithImpl<$Res>
     extends _$FavoritePokemonStateCopyWithImpl<$Res,
-        _$FavoritePokemonAddInProgress>
-    implements _$$FavoritePokemonAddInProgressCopyWith<$Res> {
-  __$$FavoritePokemonAddInProgressCopyWithImpl(
-      _$FavoritePokemonAddInProgress _value,
-      $Res Function(_$FavoritePokemonAddInProgress) _then)
+        _$FavoritePokemonAddInProgressImpl>
+    implements _$$FavoritePokemonAddInProgressImplCopyWith<$Res> {
+  __$$FavoritePokemonAddInProgressImplCopyWithImpl(
+      _$FavoritePokemonAddInProgressImpl _value,
+      $Res Function(_$FavoritePokemonAddInProgressImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$FavoritePokemonAddInProgress implements FavoritePokemonAddInProgress {
-  const _$FavoritePokemonAddInProgress();
+class _$FavoritePokemonAddInProgressImpl
+    implements FavoritePokemonAddInProgress {
+  const _$FavoritePokemonAddInProgressImpl();
 
   @override
   String toString() {
@@ -744,10 +753,10 @@ class _$FavoritePokemonAddInProgress implements FavoritePokemonAddInProgress {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FavoritePokemonAddInProgress);
+            other is _$FavoritePokemonAddInProgressImpl);
   }
 
   @override
@@ -841,26 +850,28 @@ class _$FavoritePokemonAddInProgress implements FavoritePokemonAddInProgress {
 }
 
 abstract class FavoritePokemonAddInProgress implements FavoritePokemonState {
-  const factory FavoritePokemonAddInProgress() = _$FavoritePokemonAddInProgress;
+  const factory FavoritePokemonAddInProgress() =
+      _$FavoritePokemonAddInProgressImpl;
 }
 
 /// @nodoc
-abstract class _$$FavoritePokemonAddSucceedCopyWith<$Res> {
-  factory _$$FavoritePokemonAddSucceedCopyWith(
-          _$FavoritePokemonAddSucceed value,
-          $Res Function(_$FavoritePokemonAddSucceed) then) =
-      __$$FavoritePokemonAddSucceedCopyWithImpl<$Res>;
+abstract class _$$FavoritePokemonAddSucceedImplCopyWith<$Res> {
+  factory _$$FavoritePokemonAddSucceedImplCopyWith(
+          _$FavoritePokemonAddSucceedImpl value,
+          $Res Function(_$FavoritePokemonAddSucceedImpl) then) =
+      __$$FavoritePokemonAddSucceedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<PokemonModel> favoritePokemonList, bool isFavorite});
 }
 
 /// @nodoc
-class __$$FavoritePokemonAddSucceedCopyWithImpl<$Res>
+class __$$FavoritePokemonAddSucceedImplCopyWithImpl<$Res>
     extends _$FavoritePokemonStateCopyWithImpl<$Res,
-        _$FavoritePokemonAddSucceed>
-    implements _$$FavoritePokemonAddSucceedCopyWith<$Res> {
-  __$$FavoritePokemonAddSucceedCopyWithImpl(_$FavoritePokemonAddSucceed _value,
-      $Res Function(_$FavoritePokemonAddSucceed) _then)
+        _$FavoritePokemonAddSucceedImpl>
+    implements _$$FavoritePokemonAddSucceedImplCopyWith<$Res> {
+  __$$FavoritePokemonAddSucceedImplCopyWithImpl(
+      _$FavoritePokemonAddSucceedImpl _value,
+      $Res Function(_$FavoritePokemonAddSucceedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -869,7 +880,7 @@ class __$$FavoritePokemonAddSucceedCopyWithImpl<$Res>
     Object? favoritePokemonList = null,
     Object? isFavorite = null,
   }) {
-    return _then(_$FavoritePokemonAddSucceed(
+    return _then(_$FavoritePokemonAddSucceedImpl(
       favoritePokemonList: null == favoritePokemonList
           ? _value._favoritePokemonList
           : favoritePokemonList // ignore: cast_nullable_to_non_nullable
@@ -884,8 +895,8 @@ class __$$FavoritePokemonAddSucceedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FavoritePokemonAddSucceed implements FavoritePokemonAddSucceed {
-  const _$FavoritePokemonAddSucceed(
+class _$FavoritePokemonAddSucceedImpl implements FavoritePokemonAddSucceed {
+  const _$FavoritePokemonAddSucceedImpl(
       {required final List<PokemonModel> favoritePokemonList,
       required this.isFavorite})
       : _favoritePokemonList = favoritePokemonList;
@@ -893,6 +904,8 @@ class _$FavoritePokemonAddSucceed implements FavoritePokemonAddSucceed {
   final List<PokemonModel> _favoritePokemonList;
   @override
   List<PokemonModel> get favoritePokemonList {
+    if (_favoritePokemonList is EqualUnmodifiableListView)
+      return _favoritePokemonList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_favoritePokemonList);
   }
@@ -906,10 +919,10 @@ class _$FavoritePokemonAddSucceed implements FavoritePokemonAddSucceed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FavoritePokemonAddSucceed &&
+            other is _$FavoritePokemonAddSucceedImpl &&
             const DeepCollectionEquality()
                 .equals(other._favoritePokemonList, _favoritePokemonList) &&
             (identical(other.isFavorite, isFavorite) ||
@@ -923,9 +936,9 @@ class _$FavoritePokemonAddSucceed implements FavoritePokemonAddSucceed {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FavoritePokemonAddSucceedCopyWith<_$FavoritePokemonAddSucceed>
-      get copyWith => __$$FavoritePokemonAddSucceedCopyWithImpl<
-          _$FavoritePokemonAddSucceed>(this, _$identity);
+  _$$FavoritePokemonAddSucceedImplCopyWith<_$FavoritePokemonAddSucceedImpl>
+      get copyWith => __$$FavoritePokemonAddSucceedImplCopyWithImpl<
+          _$FavoritePokemonAddSucceedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1017,35 +1030,38 @@ class _$FavoritePokemonAddSucceed implements FavoritePokemonAddSucceed {
 abstract class FavoritePokemonAddSucceed implements FavoritePokemonState {
   const factory FavoritePokemonAddSucceed(
       {required final List<PokemonModel> favoritePokemonList,
-      required final bool isFavorite}) = _$FavoritePokemonAddSucceed;
+      required final bool isFavorite}) = _$FavoritePokemonAddSucceedImpl;
 
   List<PokemonModel> get favoritePokemonList;
   bool get isFavorite;
   @JsonKey(ignore: true)
-  _$$FavoritePokemonAddSucceedCopyWith<_$FavoritePokemonAddSucceed>
+  _$$FavoritePokemonAddSucceedImplCopyWith<_$FavoritePokemonAddSucceedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FavoritePokemonAddFailedCopyWith<$Res> {
-  factory _$$FavoritePokemonAddFailedCopyWith(_$FavoritePokemonAddFailed value,
-          $Res Function(_$FavoritePokemonAddFailed) then) =
-      __$$FavoritePokemonAddFailedCopyWithImpl<$Res>;
+abstract class _$$FavoritePokemonAddFailedImplCopyWith<$Res> {
+  factory _$$FavoritePokemonAddFailedImplCopyWith(
+          _$FavoritePokemonAddFailedImpl value,
+          $Res Function(_$FavoritePokemonAddFailedImpl) then) =
+      __$$FavoritePokemonAddFailedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FavoritePokemonAddFailedCopyWithImpl<$Res>
-    extends _$FavoritePokemonStateCopyWithImpl<$Res, _$FavoritePokemonAddFailed>
-    implements _$$FavoritePokemonAddFailedCopyWith<$Res> {
-  __$$FavoritePokemonAddFailedCopyWithImpl(_$FavoritePokemonAddFailed _value,
-      $Res Function(_$FavoritePokemonAddFailed) _then)
+class __$$FavoritePokemonAddFailedImplCopyWithImpl<$Res>
+    extends _$FavoritePokemonStateCopyWithImpl<$Res,
+        _$FavoritePokemonAddFailedImpl>
+    implements _$$FavoritePokemonAddFailedImplCopyWith<$Res> {
+  __$$FavoritePokemonAddFailedImplCopyWithImpl(
+      _$FavoritePokemonAddFailedImpl _value,
+      $Res Function(_$FavoritePokemonAddFailedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$FavoritePokemonAddFailed implements FavoritePokemonAddFailed {
-  const _$FavoritePokemonAddFailed();
+class _$FavoritePokemonAddFailedImpl implements FavoritePokemonAddFailed {
+  const _$FavoritePokemonAddFailedImpl();
 
   @override
   String toString() {
@@ -1053,10 +1069,10 @@ class _$FavoritePokemonAddFailed implements FavoritePokemonAddFailed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FavoritePokemonAddFailed);
+            other is _$FavoritePokemonAddFailedImpl);
   }
 
   @override
@@ -1150,5 +1166,5 @@ class _$FavoritePokemonAddFailed implements FavoritePokemonAddFailed {
 }
 
 abstract class FavoritePokemonAddFailed implements FavoritePokemonState {
-  const factory FavoritePokemonAddFailed() = _$FavoritePokemonAddFailed;
+  const factory FavoritePokemonAddFailed() = _$FavoritePokemonAddFailedImpl;
 }

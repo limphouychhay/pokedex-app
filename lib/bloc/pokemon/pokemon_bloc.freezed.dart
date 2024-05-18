@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'pokemon_bloc.dart';
 
@@ -12,7 +12,7 @@ part of 'pokemon_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$PokemonEvent {
@@ -75,25 +75,25 @@ class _$PokemonEventCopyWithImpl<$Res, $Val extends PokemonEvent>
 }
 
 /// @nodoc
-abstract class _$$_FetchPokemonCopyWith<$Res> {
-  factory _$$_FetchPokemonCopyWith(
-          _$_FetchPokemon value, $Res Function(_$_FetchPokemon) then) =
-      __$$_FetchPokemonCopyWithImpl<$Res>;
+abstract class _$$FetchPokemonImplCopyWith<$Res> {
+  factory _$$FetchPokemonImplCopyWith(
+          _$FetchPokemonImpl value, $Res Function(_$FetchPokemonImpl) then) =
+      __$$FetchPokemonImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_FetchPokemonCopyWithImpl<$Res>
-    extends _$PokemonEventCopyWithImpl<$Res, _$_FetchPokemon>
-    implements _$$_FetchPokemonCopyWith<$Res> {
-  __$$_FetchPokemonCopyWithImpl(
-      _$_FetchPokemon _value, $Res Function(_$_FetchPokemon) _then)
+class __$$FetchPokemonImplCopyWithImpl<$Res>
+    extends _$PokemonEventCopyWithImpl<$Res, _$FetchPokemonImpl>
+    implements _$$FetchPokemonImplCopyWith<$Res> {
+  __$$FetchPokemonImplCopyWithImpl(
+      _$FetchPokemonImpl _value, $Res Function(_$FetchPokemonImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_FetchPokemon implements _FetchPokemon {
-  const _$_FetchPokemon();
+class _$FetchPokemonImpl implements _FetchPokemon {
+  const _$FetchPokemonImpl();
 
   @override
   String toString() {
@@ -101,9 +101,9 @@ class _$_FetchPokemon implements _FetchPokemon {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_FetchPokemon);
+        (other.runtimeType == runtimeType && other is _$FetchPokemonImpl);
   }
 
   @override
@@ -173,14 +173,14 @@ class _$_FetchPokemon implements _FetchPokemon {
 }
 
 abstract class _FetchPokemon implements PokemonEvent {
-  const factory _FetchPokemon() = _$_FetchPokemon;
+  const factory _FetchPokemon() = _$FetchPokemonImpl;
 }
 
 /// @nodoc
-abstract class _$$_AddFavoritePokemonCopyWith<$Res> {
-  factory _$$_AddFavoritePokemonCopyWith(_$_AddFavoritePokemon value,
-          $Res Function(_$_AddFavoritePokemon) then) =
-      __$$_AddFavoritePokemonCopyWithImpl<$Res>;
+abstract class _$$AddFavoritePokemonImplCopyWith<$Res> {
+  factory _$$AddFavoritePokemonImplCopyWith(_$AddFavoritePokemonImpl value,
+          $Res Function(_$AddFavoritePokemonImpl) then) =
+      __$$AddFavoritePokemonImplCopyWithImpl<$Res>;
   @useResult
   $Res call({PokemonModel pokemonModel});
 
@@ -188,11 +188,11 @@ abstract class _$$_AddFavoritePokemonCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AddFavoritePokemonCopyWithImpl<$Res>
-    extends _$PokemonEventCopyWithImpl<$Res, _$_AddFavoritePokemon>
-    implements _$$_AddFavoritePokemonCopyWith<$Res> {
-  __$$_AddFavoritePokemonCopyWithImpl(
-      _$_AddFavoritePokemon _value, $Res Function(_$_AddFavoritePokemon) _then)
+class __$$AddFavoritePokemonImplCopyWithImpl<$Res>
+    extends _$PokemonEventCopyWithImpl<$Res, _$AddFavoritePokemonImpl>
+    implements _$$AddFavoritePokemonImplCopyWith<$Res> {
+  __$$AddFavoritePokemonImplCopyWithImpl(_$AddFavoritePokemonImpl _value,
+      $Res Function(_$AddFavoritePokemonImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -200,7 +200,7 @@ class __$$_AddFavoritePokemonCopyWithImpl<$Res>
   $Res call({
     Object? pokemonModel = null,
   }) {
-    return _then(_$_AddFavoritePokemon(
+    return _then(_$AddFavoritePokemonImpl(
       pokemonModel: null == pokemonModel
           ? _value.pokemonModel
           : pokemonModel // ignore: cast_nullable_to_non_nullable
@@ -219,8 +219,8 @@ class __$$_AddFavoritePokemonCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AddFavoritePokemon implements _AddFavoritePokemon {
-  const _$_AddFavoritePokemon({required this.pokemonModel});
+class _$AddFavoritePokemonImpl implements _AddFavoritePokemon {
+  const _$AddFavoritePokemonImpl({required this.pokemonModel});
 
   @override
   final PokemonModel pokemonModel;
@@ -231,10 +231,10 @@ class _$_AddFavoritePokemon implements _AddFavoritePokemon {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AddFavoritePokemon &&
+            other is _$AddFavoritePokemonImpl &&
             (identical(other.pokemonModel, pokemonModel) ||
                 other.pokemonModel == pokemonModel));
   }
@@ -245,8 +245,8 @@ class _$_AddFavoritePokemon implements _AddFavoritePokemon {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AddFavoritePokemonCopyWith<_$_AddFavoritePokemon> get copyWith =>
-      __$$_AddFavoritePokemonCopyWithImpl<_$_AddFavoritePokemon>(
+  _$$AddFavoritePokemonImplCopyWith<_$AddFavoritePokemonImpl> get copyWith =>
+      __$$AddFavoritePokemonImplCopyWithImpl<_$AddFavoritePokemonImpl>(
           this, _$identity);
 
   @override
@@ -314,11 +314,11 @@ class _$_AddFavoritePokemon implements _AddFavoritePokemon {
 
 abstract class _AddFavoritePokemon implements PokemonEvent {
   const factory _AddFavoritePokemon(
-      {required final PokemonModel pokemonModel}) = _$_AddFavoritePokemon;
+      {required final PokemonModel pokemonModel}) = _$AddFavoritePokemonImpl;
 
   PokemonModel get pokemonModel;
   @JsonKey(ignore: true)
-  _$$_AddFavoritePokemonCopyWith<_$_AddFavoritePokemon> get copyWith =>
+  _$$AddFavoritePokemonImplCopyWith<_$AddFavoritePokemonImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -402,25 +402,25 @@ class _$PokemonStateCopyWithImpl<$Res, $Val extends PokemonState>
 }
 
 /// @nodoc
-abstract class _$$PokemonNotFetchCopyWith<$Res> {
-  factory _$$PokemonNotFetchCopyWith(
-          _$PokemonNotFetch value, $Res Function(_$PokemonNotFetch) then) =
-      __$$PokemonNotFetchCopyWithImpl<$Res>;
+abstract class _$$PokemonNotFetchImplCopyWith<$Res> {
+  factory _$$PokemonNotFetchImplCopyWith(_$PokemonNotFetchImpl value,
+          $Res Function(_$PokemonNotFetchImpl) then) =
+      __$$PokemonNotFetchImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$PokemonNotFetchCopyWithImpl<$Res>
-    extends _$PokemonStateCopyWithImpl<$Res, _$PokemonNotFetch>
-    implements _$$PokemonNotFetchCopyWith<$Res> {
-  __$$PokemonNotFetchCopyWithImpl(
-      _$PokemonNotFetch _value, $Res Function(_$PokemonNotFetch) _then)
+class __$$PokemonNotFetchImplCopyWithImpl<$Res>
+    extends _$PokemonStateCopyWithImpl<$Res, _$PokemonNotFetchImpl>
+    implements _$$PokemonNotFetchImplCopyWith<$Res> {
+  __$$PokemonNotFetchImplCopyWithImpl(
+      _$PokemonNotFetchImpl _value, $Res Function(_$PokemonNotFetchImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$PokemonNotFetch implements PokemonNotFetch {
-  const _$PokemonNotFetch();
+class _$PokemonNotFetchImpl implements PokemonNotFetch {
+  const _$PokemonNotFetchImpl();
 
   @override
   String toString() {
@@ -428,9 +428,9 @@ class _$PokemonNotFetch implements PokemonNotFetch {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$PokemonNotFetch);
+        (other.runtimeType == runtimeType && other is _$PokemonNotFetchImpl);
   }
 
   @override
@@ -519,29 +519,31 @@ class _$PokemonNotFetch implements PokemonNotFetch {
 }
 
 abstract class PokemonNotFetch implements PokemonState {
-  const factory PokemonNotFetch() = _$PokemonNotFetch;
+  const factory PokemonNotFetch() = _$PokemonNotFetchImpl;
 }
 
 /// @nodoc
-abstract class _$$PokemonFetchInProgressCopyWith<$Res> {
-  factory _$$PokemonFetchInProgressCopyWith(_$PokemonFetchInProgress value,
-          $Res Function(_$PokemonFetchInProgress) then) =
-      __$$PokemonFetchInProgressCopyWithImpl<$Res>;
+abstract class _$$PokemonFetchInProgressImplCopyWith<$Res> {
+  factory _$$PokemonFetchInProgressImplCopyWith(
+          _$PokemonFetchInProgressImpl value,
+          $Res Function(_$PokemonFetchInProgressImpl) then) =
+      __$$PokemonFetchInProgressImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$PokemonFetchInProgressCopyWithImpl<$Res>
-    extends _$PokemonStateCopyWithImpl<$Res, _$PokemonFetchInProgress>
-    implements _$$PokemonFetchInProgressCopyWith<$Res> {
-  __$$PokemonFetchInProgressCopyWithImpl(_$PokemonFetchInProgress _value,
-      $Res Function(_$PokemonFetchInProgress) _then)
+class __$$PokemonFetchInProgressImplCopyWithImpl<$Res>
+    extends _$PokemonStateCopyWithImpl<$Res, _$PokemonFetchInProgressImpl>
+    implements _$$PokemonFetchInProgressImplCopyWith<$Res> {
+  __$$PokemonFetchInProgressImplCopyWithImpl(
+      _$PokemonFetchInProgressImpl _value,
+      $Res Function(_$PokemonFetchInProgressImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$PokemonFetchInProgress implements PokemonFetchInProgress {
-  const _$PokemonFetchInProgress();
+class _$PokemonFetchInProgressImpl implements PokemonFetchInProgress {
+  const _$PokemonFetchInProgressImpl();
 
   @override
   String toString() {
@@ -549,9 +551,10 @@ class _$PokemonFetchInProgress implements PokemonFetchInProgress {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$PokemonFetchInProgress);
+        (other.runtimeType == runtimeType &&
+            other is _$PokemonFetchInProgressImpl);
   }
 
   @override
@@ -640,14 +643,14 @@ class _$PokemonFetchInProgress implements PokemonFetchInProgress {
 }
 
 abstract class PokemonFetchInProgress implements PokemonState {
-  const factory PokemonFetchInProgress() = _$PokemonFetchInProgress;
+  const factory PokemonFetchInProgress() = _$PokemonFetchInProgressImpl;
 }
 
 /// @nodoc
-abstract class _$$PokemonFetchSucceedCopyWith<$Res> {
-  factory _$$PokemonFetchSucceedCopyWith(_$PokemonFetchSucceed value,
-          $Res Function(_$PokemonFetchSucceed) then) =
-      __$$PokemonFetchSucceedCopyWithImpl<$Res>;
+abstract class _$$PokemonFetchSucceedImplCopyWith<$Res> {
+  factory _$$PokemonFetchSucceedImplCopyWith(_$PokemonFetchSucceedImpl value,
+          $Res Function(_$PokemonFetchSucceedImpl) then) =
+      __$$PokemonFetchSucceedImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {PokemonResponseModel pokemonResponseModel,
@@ -657,11 +660,11 @@ abstract class _$$PokemonFetchSucceedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$PokemonFetchSucceedCopyWithImpl<$Res>
-    extends _$PokemonStateCopyWithImpl<$Res, _$PokemonFetchSucceed>
-    implements _$$PokemonFetchSucceedCopyWith<$Res> {
-  __$$PokemonFetchSucceedCopyWithImpl(
-      _$PokemonFetchSucceed _value, $Res Function(_$PokemonFetchSucceed) _then)
+class __$$PokemonFetchSucceedImplCopyWithImpl<$Res>
+    extends _$PokemonStateCopyWithImpl<$Res, _$PokemonFetchSucceedImpl>
+    implements _$$PokemonFetchSucceedImplCopyWith<$Res> {
+  __$$PokemonFetchSucceedImplCopyWithImpl(_$PokemonFetchSucceedImpl _value,
+      $Res Function(_$PokemonFetchSucceedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -670,7 +673,7 @@ class __$$PokemonFetchSucceedCopyWithImpl<$Res>
     Object? pokemonResponseModel = null,
     Object? favoritePokemonList = null,
   }) {
-    return _then(_$PokemonFetchSucceed(
+    return _then(_$PokemonFetchSucceedImpl(
       pokemonResponseModel: null == pokemonResponseModel
           ? _value.pokemonResponseModel
           : pokemonResponseModel // ignore: cast_nullable_to_non_nullable
@@ -694,8 +697,8 @@ class __$$PokemonFetchSucceedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PokemonFetchSucceed implements PokemonFetchSucceed {
-  const _$PokemonFetchSucceed(
+class _$PokemonFetchSucceedImpl implements PokemonFetchSucceed {
+  const _$PokemonFetchSucceedImpl(
       {required this.pokemonResponseModel,
       required final List<PokemonModel> favoritePokemonList})
       : _favoritePokemonList = favoritePokemonList;
@@ -705,6 +708,8 @@ class _$PokemonFetchSucceed implements PokemonFetchSucceed {
   final List<PokemonModel> _favoritePokemonList;
   @override
   List<PokemonModel> get favoritePokemonList {
+    if (_favoritePokemonList is EqualUnmodifiableListView)
+      return _favoritePokemonList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_favoritePokemonList);
   }
@@ -715,10 +720,10 @@ class _$PokemonFetchSucceed implements PokemonFetchSucceed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PokemonFetchSucceed &&
+            other is _$PokemonFetchSucceedImpl &&
             (identical(other.pokemonResponseModel, pokemonResponseModel) ||
                 other.pokemonResponseModel == pokemonResponseModel) &&
             const DeepCollectionEquality()
@@ -732,8 +737,8 @@ class _$PokemonFetchSucceed implements PokemonFetchSucceed {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PokemonFetchSucceedCopyWith<_$PokemonFetchSucceed> get copyWith =>
-      __$$PokemonFetchSucceedCopyWithImpl<_$PokemonFetchSucceed>(
+  _$$PokemonFetchSucceedImplCopyWith<_$PokemonFetchSucceedImpl> get copyWith =>
+      __$$PokemonFetchSucceedImplCopyWithImpl<_$PokemonFetchSucceedImpl>(
           this, _$identity);
 
   @override
@@ -822,35 +827,35 @@ abstract class PokemonFetchSucceed implements PokemonState {
   const factory PokemonFetchSucceed(
           {required final PokemonResponseModel pokemonResponseModel,
           required final List<PokemonModel> favoritePokemonList}) =
-      _$PokemonFetchSucceed;
+      _$PokemonFetchSucceedImpl;
 
   PokemonResponseModel get pokemonResponseModel;
   List<PokemonModel> get favoritePokemonList;
   @JsonKey(ignore: true)
-  _$$PokemonFetchSucceedCopyWith<_$PokemonFetchSucceed> get copyWith =>
+  _$$PokemonFetchSucceedImplCopyWith<_$PokemonFetchSucceedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$PokemonFetchFailedCopyWith<$Res> {
-  factory _$$PokemonFetchFailedCopyWith(_$PokemonFetchFailed value,
-          $Res Function(_$PokemonFetchFailed) then) =
-      __$$PokemonFetchFailedCopyWithImpl<$Res>;
+abstract class _$$PokemonFetchFailedImplCopyWith<$Res> {
+  factory _$$PokemonFetchFailedImplCopyWith(_$PokemonFetchFailedImpl value,
+          $Res Function(_$PokemonFetchFailedImpl) then) =
+      __$$PokemonFetchFailedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$PokemonFetchFailedCopyWithImpl<$Res>
-    extends _$PokemonStateCopyWithImpl<$Res, _$PokemonFetchFailed>
-    implements _$$PokemonFetchFailedCopyWith<$Res> {
-  __$$PokemonFetchFailedCopyWithImpl(
-      _$PokemonFetchFailed _value, $Res Function(_$PokemonFetchFailed) _then)
+class __$$PokemonFetchFailedImplCopyWithImpl<$Res>
+    extends _$PokemonStateCopyWithImpl<$Res, _$PokemonFetchFailedImpl>
+    implements _$$PokemonFetchFailedImplCopyWith<$Res> {
+  __$$PokemonFetchFailedImplCopyWithImpl(_$PokemonFetchFailedImpl _value,
+      $Res Function(_$PokemonFetchFailedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$PokemonFetchFailed implements PokemonFetchFailed {
-  const _$PokemonFetchFailed();
+class _$PokemonFetchFailedImpl implements PokemonFetchFailed {
+  const _$PokemonFetchFailedImpl();
 
   @override
   String toString() {
@@ -858,9 +863,9 @@ class _$PokemonFetchFailed implements PokemonFetchFailed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$PokemonFetchFailed);
+        (other.runtimeType == runtimeType && other is _$PokemonFetchFailedImpl);
   }
 
   @override
@@ -949,5 +954,5 @@ class _$PokemonFetchFailed implements PokemonFetchFailed {
 }
 
 abstract class PokemonFetchFailed implements PokemonState {
-  const factory PokemonFetchFailed() = _$PokemonFetchFailed;
+  const factory PokemonFetchFailed() = _$PokemonFetchFailedImpl;
 }

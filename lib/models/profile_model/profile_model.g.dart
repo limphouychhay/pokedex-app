@@ -6,22 +6,22 @@ part of 'profile_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ProfileModel _$$_ProfileModelFromJson(Map<String, dynamic> json) =>
-    _$_ProfileModel(
-      id: json['id'] as int?,
-      customerId: json['customerId'] as int?,
+_$ProfileModelImpl _$$ProfileModelImplFromJson(Map<String, dynamic> json) =>
+    _$ProfileModelImpl(
+      id: (json['id'] as num?)?.toInt(),
+      customerId: (json['customerId'] as num?)?.toInt(),
       firstName: json['firstName'] as String?,
       lastname: json['lastname'] as String?,
       phone: json['phone'] as String?,
       lastCredentialUpdate: json['lastCredentialUpdate'] as String?,
       lastLoginDate: json['lastLoginDate'] as String?,
       status: json['status'] as String?,
-      createdBy: json['createdBy'] as int?,
-      updatedBy: json['updatedBy'] as int?,
+      createdBy: (json['createdBy'] as num?)?.toInt(),
+      updatedBy: (json['updatedBy'] as num?)?.toInt(),
       token: json['token'] as String?,
     );
 
-Map<String, dynamic> _$$_ProfileModelToJson(_$_ProfileModel instance) =>
+Map<String, dynamic> _$$ProfileModelImplToJson(_$ProfileModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'customerId': instance.customerId,

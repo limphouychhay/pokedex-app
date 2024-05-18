@@ -56,99 +56,103 @@ class DetailModalWidget extends StatelessWidget {
                 ),
               ],
             ),
-            Container(
-              height: context.screenHeight * 0.40,
-              width: double.infinity,
-              padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
-              child: TabBarView(
-                controller: tabController,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      DetailTextWidget(
-                        title: 'Description: ',
-                        text:
-                            '${pokemon.xDescription != '' ? pokemon.xDescription : pokemon.yDescription}',
-                      ),
-                      DetailTextWidget(
-                        title: 'Height: ',
-                        text: '${pokemon.height}',
-                      ),
-                      DetailTextWidget(
-                        title: 'Weight: ',
-                        text: '${pokemon.weight}',
-                      ),
-                      DetailTextWidget(
-                        title: 'Species: ',
-                        text: '${pokemon.category}',
-                      ),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      DetailTextWidget(
-                        title: 'HP: ',
-                        text: '${pokemon.hp}',
-                      ),
-                      DetailTextWidget(
-                        title: 'Attack: ',
-                        text: '${pokemon.attack}',
-                      ),
-                      DetailTextWidget(
-                        title: 'Defense: ',
-                        text: '${pokemon.defense}',
-                      ),
-                      DetailTextWidget(
-                        title: 'Speed: ',
-                        text: '${pokemon.speed}',
-                      ),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          const Text(
-                            'Gender: ',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 13,
-                              color: Colors.black,
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  top: 10,
+                  left: 10,
+                  right: 10,
+                ),
+                child: TabBarView(
+                  controller: tabController,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        DetailTextWidget(
+                          title: 'Description: ',
+                          text:
+                              '${pokemon.xDescription != '' ? pokemon.xDescription : pokemon.yDescription}',
+                        ),
+                        DetailTextWidget(
+                          title: 'Height: ',
+                          text: '${pokemon.height}',
+                        ),
+                        DetailTextWidget(
+                          title: 'Weight: ',
+                          text: '${pokemon.weight}',
+                        ),
+                        DetailTextWidget(
+                          title: 'Species: ',
+                          text: '${pokemon.category}',
+                        ),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        DetailTextWidget(
+                          title: 'HP: ',
+                          text: '${pokemon.hp}',
+                        ),
+                        DetailTextWidget(
+                          title: 'Attack: ',
+                          text: '${pokemon.attack}',
+                        ),
+                        DetailTextWidget(
+                          title: 'Defense: ',
+                          text: '${pokemon.defense}',
+                        ),
+                        DetailTextWidget(
+                          title: 'Speed: ',
+                          text: '${pokemon.speed}',
+                        ),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            const Text(
+                              'Gender: ',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13,
+                                color: Colors.black,
+                              ),
                             ),
-                          ),
-                          const Icon(
-                            Icons.male,
-                            color: Colors.blue,
-                          ),
-                          Text('${pokemon.malePercentage} '),
-                          const Icon(
-                            Icons.female,
-                            color: Colors.pink,
-                          ),
-                          Text('${pokemon.femalePercentage}'),
-                        ],
-                      ),
-                      DetailTextWidget(
-                        title: 'Egg Group: ',
-                        text: '${pokemon.eggGroups}',
-                      ),
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      DetailTextWidget(
-                        title: 'Weakness: ',
-                        text: '${pokemon.weaknesses}'
-                            .replaceAll('[', '')
-                            .replaceAll(']', ''),
-                      ),
-                    ],
-                  ),
-                ],
+                            const Icon(
+                              Icons.male,
+                              color: Colors.blue,
+                            ),
+                            Text('${pokemon.malePercentage} '),
+                            const Icon(
+                              Icons.female,
+                              color: Colors.pink,
+                            ),
+                            Text('${pokemon.femalePercentage}'),
+                          ],
+                        ),
+                        DetailTextWidget(
+                          title: 'Egg Group: ',
+                          text: '${pokemon.eggGroups}',
+                        ),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        DetailTextWidget(
+                          title: 'Weakness: ',
+                          text: '${pokemon.weaknesses}'
+                              .replaceAll('[', '')
+                              .replaceAll(']', ''),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

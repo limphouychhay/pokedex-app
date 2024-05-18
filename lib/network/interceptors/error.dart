@@ -21,7 +21,7 @@ abstract class Failure with _$Failure {
 
   const factory Failure.unauthorized(
       {@Default('You no longer has permission to use this feature!')
-          String message}) = Unauthorized;
+      String message}) = Unauthorized;
 
   const factory Failure.forbidden({@Default('Forbidden!') String message}) =
       Forbidden;
