@@ -43,6 +43,7 @@ class AppTheme {
 
   static ThemeData define() {
     return ThemeData(
+      useMaterial3: false,
       primaryColor: AppColors.primary,
       primarySwatch: MaterialColorGenerator.generateMaterialColor(
         AppColors.primary,

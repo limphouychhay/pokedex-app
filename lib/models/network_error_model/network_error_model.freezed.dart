@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'network_error_model.dart';
 
@@ -12,7 +12,7 @@ part of 'network_error_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$NetworkErrorModel {
@@ -96,11 +96,11 @@ class _$NetworkErrorModelCopyWithImpl<$Res, $Val extends NetworkErrorModel>
 }
 
 /// @nodoc
-abstract class _$$_NetworkErrorModelCopyWith<$Res>
+abstract class _$$NetworkErrorModelImplCopyWith<$Res>
     implements $NetworkErrorModelCopyWith<$Res> {
-  factory _$$_NetworkErrorModelCopyWith(_$_NetworkErrorModel value,
-          $Res Function(_$_NetworkErrorModel) then) =
-      __$$_NetworkErrorModelCopyWithImpl<$Res>;
+  factory _$$NetworkErrorModelImplCopyWith(_$NetworkErrorModelImpl value,
+          $Res Function(_$NetworkErrorModelImpl) then) =
+      __$$NetworkErrorModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -115,11 +115,11 @@ abstract class _$$_NetworkErrorModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_NetworkErrorModelCopyWithImpl<$Res>
-    extends _$NetworkErrorModelCopyWithImpl<$Res, _$_NetworkErrorModel>
-    implements _$$_NetworkErrorModelCopyWith<$Res> {
-  __$$_NetworkErrorModelCopyWithImpl(
-      _$_NetworkErrorModel _value, $Res Function(_$_NetworkErrorModel) _then)
+class __$$NetworkErrorModelImplCopyWithImpl<$Res>
+    extends _$NetworkErrorModelCopyWithImpl<$Res, _$NetworkErrorModelImpl>
+    implements _$$NetworkErrorModelImplCopyWith<$Res> {
+  __$$NetworkErrorModelImplCopyWithImpl(_$NetworkErrorModelImpl _value,
+      $Res Function(_$NetworkErrorModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -131,7 +131,7 @@ class __$$_NetworkErrorModelCopyWithImpl<$Res>
     Object? isVisible = null,
     Object? buttonModel = null,
   }) {
-    return _then(_$_NetworkErrorModel(
+    return _then(_$NetworkErrorModelImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -158,8 +158,8 @@ class __$$_NetworkErrorModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NetworkErrorModel implements _NetworkErrorModel {
-  const _$_NetworkErrorModel(
+class _$NetworkErrorModelImpl implements _NetworkErrorModel {
+  const _$NetworkErrorModelImpl(
       {required this.title,
       required this.description,
       this.statusCode,
@@ -185,10 +185,10 @@ class _$_NetworkErrorModel implements _NetworkErrorModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NetworkErrorModel &&
+            other is _$NetworkErrorModelImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -207,8 +207,8 @@ class _$_NetworkErrorModel implements _NetworkErrorModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NetworkErrorModelCopyWith<_$_NetworkErrorModel> get copyWith =>
-      __$$_NetworkErrorModelCopyWithImpl<_$_NetworkErrorModel>(
+  _$$NetworkErrorModelImplCopyWith<_$NetworkErrorModelImpl> get copyWith =>
+      __$$NetworkErrorModelImplCopyWithImpl<_$NetworkErrorModelImpl>(
           this, _$identity);
 }
 
@@ -218,7 +218,7 @@ abstract class _NetworkErrorModel implements NetworkErrorModel {
       required final String description,
       final int? statusCode,
       final bool isVisible,
-      final ButtonModel buttonModel}) = _$_NetworkErrorModel;
+      final ButtonModel buttonModel}) = _$NetworkErrorModelImpl;
 
   @override
   String get title;
@@ -232,6 +232,6 @@ abstract class _NetworkErrorModel implements NetworkErrorModel {
   ButtonModel get buttonModel;
   @override
   @JsonKey(ignore: true)
-  _$$_NetworkErrorModelCopyWith<_$_NetworkErrorModel> get copyWith =>
+  _$$NetworkErrorModelImplCopyWith<_$NetworkErrorModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

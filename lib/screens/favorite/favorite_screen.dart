@@ -77,10 +77,10 @@ class FavoriteScreen extends HookWidget {
               fit: BoxFit.cover,
             ),
           ),
-          child: Column(
+          child: const Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
-            children: const [
+            children: [
               Text(
                 'Please Add Pokemon to Favorite...',
                 style: TextStyle(
